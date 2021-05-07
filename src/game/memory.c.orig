@@ -65,7 +65,9 @@ extern struct MainPoolBlock *sPoolListHeadR;
  */
 struct MemoryPool *gEffectsMemoryPool;
 
+
 uintptr_t sSegmentTable[32];
+uintptr_t sSegmentROMTable[32];
 u32 sPoolFreeSpace;
 u8 *sPoolStart;
 u8 *sPoolEnd;
@@ -295,7 +297,7 @@ void *load_segment(s32 segment, u8 *srcStart, u8 *srcEnd, u32 side) {
     void *addr = dynamic_dma_read(srcStart, srcEnd, side);
 
     if (addr != NULL) {
-        set_segment_base_addr(segment, addr);
+        set_segment_base_addr(segment, addr); sSegmentROMTable[segment] = (uintptr_t) srcStart;
     }
     return addr;
 }
