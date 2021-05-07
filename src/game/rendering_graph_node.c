@@ -397,7 +397,7 @@ Gfx* createPointLightsDl(Vec3f pos, f32 yOffset)
         newIndex = -1;
 
         // Get the distance to the current light from the object
-        curDistSq = vec3f_vec3s_dist_sq(pos, gPointLights[i].worldPos);
+        curDistSq = vec3f_vec3s_dist_sq(pos, gPointLights[i].worldPos) * (WORLD_SCALE * WORLD_SCALE);
 
         // Skip this point light if it is too far away to matter
         if (curDistSq > MAX_POINT_LIGHT_DIST * MAX_POINT_LIGHT_DIST) continue;
@@ -604,8 +604,8 @@ void geo_process_camera(struct GraphNodeCamera *node) {
     mtxf_to_mtx(mtx, gMatStack[gMatStackIndex]);
     
 
-    if (gPlayer1Controller->buttonPressed & L_TRIG)
-        gPointLightCompatibilityMode ^= 1;
+    /*if (gPlayer1Controller->buttonPressed & L_TRIG)
+        gPointLightCompatibilityMode ^= 1;*/
 
     viewMat = &gMatStack[gMatStackIndex];
 
@@ -621,8 +621,11 @@ void geo_process_camera(struct GraphNodeCamera *node) {
     // Transform the point light positions into screen space
     for (i = 0; i < gPointLightCount; i++)
     {
-        vec3s_copy(gPointLights[i].l.pl.pos, gPointLights[i].worldPos);
-        mtxf_mul_vec3s(gMatStack[gMatStackIndex], gPointLights[i].l.pl.pos);
+        Mat4 *mtx = &gMatStack[gMatStackIndex];
+        s16 *pos = &gPointLights[i].worldPos[0];
+        gPointLights[i].l.pl.pos[0] = (s32)((pos[0] * (*mtx)[0][0] + pos[1] * (*mtx)[1][0] + pos[2] * (*mtx)[2][0] + (*mtx)[3][0]) * (1.0f / WORLD_SCALE));
+        gPointLights[i].l.pl.pos[1] = (s32)((pos[0] * (*mtx)[0][1] + pos[1] * (*mtx)[1][1] + pos[2] * (*mtx)[2][1] + (*mtx)[3][1]) * (1.0f / WORLD_SCALE));
+        gPointLights[i].l.pl.pos[2] = (s32)((pos[0] * (*mtx)[0][2] + pos[1] * (*mtx)[1][2] + pos[2] * (*mtx)[2][2] + (*mtx)[3][2]) * (1.0f / WORLD_SCALE));
     }
 
     // Transform the directional light if enabled
