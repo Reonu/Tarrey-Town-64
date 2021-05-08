@@ -10756,7 +10756,7 @@ struct Cutscene sCutsceneReadMessage[] = {
 };
 
 BAD_RETURN(s32) cutscene_start_level(struct Camera *c) {
-    
+    gCutsceneFocus = gMarioState;
     vec3f_set_dist_and_angle(&gCutsceneFocus->oPosX, c->pos, 4000, 0x800, 0);
         
     //if (gCutsceneTimer == 399) {
@@ -11236,6 +11236,7 @@ void play_cutscene(struct Camera *c) {
         CUTSCENE(CUTSCENE_RACE_DIALOG, sCutsceneDialog)
         CUTSCENE(CUTSCENE_ENTER_PYRAMID_TOP, sCutsceneEnterPyramidTop)
         CUTSCENE(CUTSCENE_SSL_PYRAMID_EXPLODE, sCutscenePyramidTopExplode)
+        CUTSCENE(CUTSCENE_START_LEVEL, sCutsceneStartLevel)
     }
 
 #undef CUTSCENE

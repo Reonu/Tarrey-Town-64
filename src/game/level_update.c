@@ -1243,6 +1243,10 @@ s32 lvl_init_or_update(s16 initOrUpdate, UNUSED s32 unused) {
 
     return result;
 }
+extern u8 widescreen;
+void lvl_set_widescreen(void) {
+    widescreen = 1;
+}
 
 s32 lvl_init_from_save_file(UNUSED s16 arg0, s32 levelNum) {
 #ifdef VERSION_EU
@@ -1287,6 +1291,7 @@ s32 lvl_set_current_level(UNUSED s16 arg0, s32 levelNum) {
     sWarpCheckpointActive = FALSE;
     gCurrLevelNum = levelNum;
     gCurrCourseNum = gLevelToCourseNumTable[levelNum - 1];
+	if (gCurrLevelNum == LEVEL_BOB) return 0;
 		if (gCurrLevelNum == LEVEL_JRB) return 0;
 
     if (gCurrDemoInput != NULL || gCurrCreditsEntry != NULL || gCurrCourseNum == COURSE_NONE) {

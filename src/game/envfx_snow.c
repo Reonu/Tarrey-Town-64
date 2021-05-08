@@ -253,7 +253,7 @@ void envfx_update_snow_blizzard(s32 snowCylinderX, s32 snowCylinderY, s32 snowCy
             (gEnvFxBuffer + i)->isAlive = 1;
         } else {
             (gEnvFxBuffer + i)->xPos += random_float() * 2 - 1.0f + (s16)(deltaX / 1.2) + 20.0f;
-            (gEnvFxBuffer + i)->yPos -= 5 -(s16)(deltaY * 0.8);
+            (gEnvFxBuffer + i)->yPos -= 10 -(s16)(deltaY * 0.8);
             (gEnvFxBuffer + i)->zPos += random_float() * 2 - 1.0f + (s16)(deltaZ / 1.2);
         }
     }
