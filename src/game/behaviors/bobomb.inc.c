@@ -293,13 +293,17 @@ void bobomb_buddy_act_idle(void) {
     o->oBobombBuddyPosYCopy = o->oPosY;
     o->oBobombBuddyPosZCopy = o->oPosZ;
 
-    collisionFlags = object_step();
+    //collisionFlags = object_step();
 
     if ((sp1a == 5) || (sp1a == 16))
         cur_obj_play_sound_2(SOUND_OBJ_BOBOMB_WALK);
 
-    if (o->oDistanceToMario < 1000.0f)
-        o->oMoveAngleYaw = approach_s16_symmetric(o->oMoveAngleYaw, o->oAngleToMario, 0x140);
+    if (o->oDistanceToMario < 1000.0f) {
+        if (((o->oBehParams >> 24) & 0xFF) == 0x00) {
+            o->oMoveAngleYaw = approach_s16_symmetric(o->oMoveAngleYaw, o->oAngleToMario, 0x140);
+        }
+    }
+        
 
     if (o->oInteractStatus == INT_STATUS_INTERACTED)
         o->oAction = BOBOMB_BUDDY_ACT_TURN_TO_TALK;
@@ -383,15 +387,20 @@ void bobomb_buddy_act_talk(void) {
 }
 
 void bobomb_buddy_act_turn_to_talk(void) {
-    s16 sp1e = o->header.gfx.animInfo.animFrame;
-    if ((sp1e == 5) || (sp1e == 16))
-        cur_obj_play_sound_2(SOUND_OBJ_BOBOMB_WALK);
+    if (((o->oBehParams >> 24) & 0xFF) == 0x00) {
+        s16 sp1e = o->header.gfx.animInfo.animFrame;
+        if ((sp1e == 5) || (sp1e == 16))
+            //cur_obj_play_sound_2(SOUND_OBJ_BOBOMB_WALK);
 
-    o->oMoveAngleYaw = approach_s16_symmetric(o->oMoveAngleYaw, o->oAngleToMario, 0x1000);
-    if ((s16) o->oMoveAngleYaw == (s16) o->oAngleToMario)
+        o->oMoveAngleYaw = approach_s16_symmetric(o->oMoveAngleYaw, o->oAngleToMario, 0x1000);
+        if ((s16) o->oMoveAngleYaw == (s16) o->oAngleToMario)
+            o->oAction = BOBOMB_BUDDY_ACT_TALK;
+
+        //cur_obj_play_sound_2(SOUND_ACTION_READ_SIGN);
+    } else {
         o->oAction = BOBOMB_BUDDY_ACT_TALK;
+    }
 
-    cur_obj_play_sound_2(SOUND_ACTION_READ_SIGN);
 }
 
 void bobomb_buddy_actions(void) {
@@ -414,6 +423,9 @@ void bobomb_buddy_actions(void) {
 
 void bhv_bobomb_buddy_loop(void) {
     bobomb_buddy_actions();
+    u8 bparam1 = (o->oBehParams >> 24) & 0xFF;
+    cur_obj_init_animation(bparam1);
+    
 
     curr_obj_random_blink(&o->oBobombBuddyBlinkTimer);
 
