@@ -6213,9 +6213,7 @@ struct CameraTrigger sCamRR[] = {
  * to free_roam when Mario is not walking up the tower.
  */
 struct CameraTrigger sCamBOB[] = {
-    {  1, cam_bob_tower, 2468, 2720, -4608, 3263, 1696, 3072, 0 },
-    { -1, cam_bob_default_free_roam, 0, 0, 0, 0, 0, 0, 0 },
-    NULL_TRIGGER
+	NULL_TRIGGER
 };
 
 /**
@@ -10756,6 +10754,22 @@ struct Cutscene sCutsceneReadMessage[] = {
     { cutscene_read_message_set_flag, 15 },
     { cutscene_read_message_end, 0 }
 };
+
+BAD_RETURN(s32) cutscene_start_level(struct Camera *c) {
+    
+    vec3f_set_dist_and_angle(&gCutsceneFocus->oPosX, c->pos, 4000, 0x800, 0);
+        
+    //if (gCutsceneTimer == 399) {
+
+    //}
+
+}
+
+struct Cutscene sCutsceneStartLevel[] = {
+    { cutscene_start_level, CUTSCENE_LOOP },
+};
+
+
 
 /* TODO:
  * The next two arrays are both related to levels, and they look generated.

@@ -6140,4 +6140,11 @@ const BehaviorScript bhvIntroScene[] = {
     END_LOOP(),
 };
 
+const BehaviorScript bhvCutsceneHandler[] = {
+    BEGIN(OBJ_LIST_DEFAULT),
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_cutscene_handler_loop),
+    END_LOOP(),
+};
+
 
