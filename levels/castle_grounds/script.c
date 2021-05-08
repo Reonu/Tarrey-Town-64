@@ -49,7 +49,7 @@ const LevelScript level_castle_grounds_entry[] = {
 		MARIO_POS(0x01, 0, 0, 200, 0),
 		TERRAIN(castle_grounds_area_1_collision),
 		MACRO_OBJECTS(castle_grounds_area_1_macro_objs),
-		SET_BACKGROUND_MUSIC(0x00, SEQ_LEVEL_HOT),
+		SET_BACKGROUND_MUSIC(0x00, SEQ_LEVEL_UNDERGROUND),
 		TERRAIN_TYPE(TERRAIN_GRASS),
 	END_AREA(),
 

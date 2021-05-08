@@ -1174,15 +1174,17 @@ void mode_8_directions_camera(struct Camera *c) {
     s16 oldAreaYaw = sAreaYaw;
 
     radial_camera_input(c, 0.f);
-
-    if (gPlayer1Controller->buttonPressed & R_CBUTTONS) {
-        s8DirModeYawOffset += DEGREES(45);
-        play_sound_cbutton_side();
+    if (gCustomCameraMode == 0) {
+        if (gPlayer1Controller->buttonPressed & R_CBUTTONS) {
+            s8DirModeYawOffset += DEGREES(45);
+            play_sound_cbutton_side();
+        }
+        if (gPlayer1Controller->buttonPressed & L_CBUTTONS) {
+            s8DirModeYawOffset -= DEGREES(45);
+            play_sound_cbutton_side();
+        }
     }
-    if (gPlayer1Controller->buttonPressed & L_CBUTTONS) {
-        s8DirModeYawOffset -= DEGREES(45);
-        play_sound_cbutton_side();
-    }
+    
 
     lakitu_zoom(400.f, 0x900);
     c->nextYaw = update_8_directions_camera(c, c->focus, pos);
@@ -10756,8 +10758,8 @@ struct Cutscene sCutsceneReadMessage[] = {
 };
 
 BAD_RETURN(s32) cutscene_start_level(struct Camera *c) {
-    gCutsceneFocus = gMarioState;
-    vec3f_set_dist_and_angle(&gCutsceneFocus->oPosX, c->pos, 4000, 0x800, 0);
+    gCutsceneFocus = gMarioObject;
+    vec3f_set_dist_and_angle(c->pos, &gCutsceneFocus->oPosX, 4000, 0x800, 0);
         
     //if (gCutsceneTimer == 399) {
 

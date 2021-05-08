@@ -1244,8 +1244,8 @@ s32 lvl_init_or_update(s16 initOrUpdate, UNUSED s32 unused) {
     return result;
 }
 extern u8 widescreen;
-void lvl_set_widescreen(void) {
-    widescreen = 1;
+void lvl_set_camera_mode(u8 arg0) {
+    gCustomCameraMode = arg0;
 }
 
 s32 lvl_init_from_save_file(UNUSED s16 arg0, s32 levelNum) {

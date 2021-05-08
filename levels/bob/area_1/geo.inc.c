@@ -3,7 +3,13 @@
 const GeoLayout bob_area_1_geo[] = {
 	GEO_NODE_START(),
 	GEO_OPEN_NODE(),
-		GEO_TRANSLATE_NODE_WITH_DL(1, 28, 100, -37, bob_dl_Plane_mesh_layer_1),
+		GEO_TRANSLATE_NODE_WITH_DL(1, 2312, 3169, 1539, bob_dl_Cube_mesh_layer_1),
+		GEO_TRANSLATE_NODE_WITH_DL(1, -2502, 3190, 1621, bob_dl_Cube_002_mesh_layer_1),
+		GEO_TRANSLATE_NODE_WITH_DL(1, 2312, 3169, -1413, bob_dl_Cube_005_mesh_layer_1),
+		GEO_TRANSLATE_NODE_WITH_DL(1, 2312, 3169, -4002, bob_dl_Cube_006_mesh_layer_1),
+		GEO_TRANSLATE_NODE_WITH_DL(1, -2502, 3190, -1488, bob_dl_Cube_007_mesh_layer_1),
+		GEO_TRANSLATE_NODE_WITH_DL(1, -2502, 3190, -4158, bob_dl_Cube_008_mesh_layer_1),
+		GEO_DISPLAY_LIST(1, bob_dl_Plane_mesh_layer_1),
 	GEO_CLOSE_NODE(),
 	GEO_RETURN(),
 };
