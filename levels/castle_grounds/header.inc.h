@@ -22,7 +22,7 @@ extern Gfx castle_grounds_dl_FireplaceLOD_mesh_layer_1_tri_0[];
 extern Vtx castle_grounds_dl_FireplaceLOD_mesh_layer_1_vtx_1[35];
 extern Gfx castle_grounds_dl_FireplaceLOD_mesh_layer_1_tri_1[];
 extern Vtx castle_grounds_dl_Plane_mesh_layer_1_vtx_cull[8];
-extern Vtx castle_grounds_dl_Plane_mesh_layer_1_vtx_0[138];
+extern Vtx castle_grounds_dl_Plane_mesh_layer_1_vtx_0[4];
 extern Gfx castle_grounds_dl_Plane_mesh_layer_1_tri_0[];
 extern Gfx mat_castle_grounds_dl_f3d_material_001_layer1[];
 extern Gfx mat_revert_castle_grounds_dl_f3d_material_001_layer1[];

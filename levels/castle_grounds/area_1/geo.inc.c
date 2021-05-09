@@ -3,8 +3,8 @@
 const GeoLayout castle_grounds_area_1_geo[] = {
 	GEO_NODE_START(),
 	GEO_OPEN_NODE(),
-		GEO_TRANSLATE_NODE_WITH_DL(1, 239, 159, -1518, castle_grounds_dl_Cube_mesh_layer_1),
-		GEO_TRANSLATE_NODE(LAYER_OPAQUE, 264, 746, -1068),
+		GEO_TRANSLATE_NODE_WITH_DL(1, 239, 159, -4281, castle_grounds_dl_Cube_mesh_layer_1),
+		GEO_TRANSLATE_NODE(LAYER_OPAQUE, 264, 746, -3831),
 		GEO_OPEN_NODE(),
 			GEO_TRANSLATE_NODE(LAYER_OPAQUE, -12, -634, 1),
 			GEO_OPEN_NODE(),
