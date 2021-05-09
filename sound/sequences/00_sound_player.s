@@ -2729,7 +2729,7 @@ sound_ref .sound_general_quiet_bubble2
 sound_ref .sound_general_castle_trap_open
 sound_ref .sound_general_wall_explosion
 sound_ref .sound_general_coin
-sound_ref .sound_general_coin
+sound_ref .sound_thunder
 sound_ref .sound_general_coin_water
 sound_ref .sound_general_coin_water
 sound_ref .sound_general_coin_water
@@ -3074,6 +3074,17 @@ layer_note1 25, 0x2, 40
 layer_note1 37, 0x7, 85
 layer_note1 30, 0x5, 40
 layer_note1 42, 0x37, 85
+layer_end
+
+.sound_thunder:
+chan_setbank 8
+chan_setinstr 19
+chan_setlayer 0, .layer_11E5
+chan_end
+
+.layer_11E5:
+
+layer_note1 39, 0xFA, 127
 layer_end
 
 .sound_general_coin_water:
