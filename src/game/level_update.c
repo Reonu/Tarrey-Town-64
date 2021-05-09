@@ -1243,9 +1243,13 @@ s32 lvl_init_or_update(s16 initOrUpdate, UNUSED s32 unused) {
 
     return result;
 }
+extern u8 s8DirModeBaseYaw;
 extern u8 widescreen;
 void lvl_set_camera_mode(u8 arg0) {
     gCustomCameraMode = arg0;
+    if (arg0 == 1) {
+        s8DirModeBaseYaw = DEGREES(0);
+    }
 }
 
 s32 lvl_init_from_save_file(UNUSED s16 arg0, s32 levelNum) {

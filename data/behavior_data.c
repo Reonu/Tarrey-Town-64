@@ -6142,6 +6142,7 @@ const BehaviorScript bhvIntroScene[] = {
 
 const BehaviorScript bhvCutsceneHandler[] = {
     BEGIN(OBJ_LIST_DEFAULT),
+    CALL_NATIVE(bhv_cutscene_handler_init),
     BEGIN_LOOP(),
         CALL_NATIVE(bhv_cutscene_handler_loop),
     END_LOOP(),
@@ -6151,6 +6152,12 @@ const BehaviorScript bhvLightingBolt[] = {
     BEGIN(OBJ_LIST_DEFAULT),
     BEGIN_LOOP(),
         CALL_NATIVE(bhv_lighting_bolt_loop),
+    END_LOOP(),
+};
+const BehaviorScript bhvLamp[] = {
+    BEGIN(OBJ_LIST_DEFAULT),
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_lamp_loop),
     END_LOOP(),
 };
 

@@ -11,6 +11,7 @@
 #include "shadow.h"
 #include "sm64.h"
 #define WIDESCREEN
+#define FORCE_CONSOLE
 
 #include <point_lights.h>
 
@@ -278,11 +279,16 @@ static void geo_process_perspective(struct GraphNodePerspective *node) {
  */
 static void geo_process_level_of_detail(struct GraphNodeLevelOfDetail *node) {
     f32 distanceFromCam;
-    if (gIsConsole) {
+    #ifdef FORCE_CONSOLE
         distanceFromCam = -gMatStack[gMatStackIndex][3][2];
-    } else {
-        distanceFromCam = 50;
-    }
+    #else
+        if (gIsConsole) {
+            distanceFromCam = -gMatStack[gMatStackIndex][3][2];
+        } else {
+            distanceFromCam = 50;
+        }
+    #endif
+
 	
     if ((f32)node->minDistance <= distanceFromCam && distanceFromCam < (f32)node->maxDistance) {
         if (node->node.children != 0) {
