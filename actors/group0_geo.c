@@ -19,3 +19,4 @@
 
 #include "lantern/geo.inc.c"
 #include "toad2/geo.inc.c"
+#include "lighting_bolt/geo.inc.c"

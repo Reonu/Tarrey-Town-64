@@ -10760,11 +10760,6 @@ struct Cutscene sCutsceneReadMessage[] = {
 BAD_RETURN(s32) cutscene_start_level(struct Camera *c) {
     gCutsceneFocus = gMarioObject;
     vec3f_set_dist_and_angle(c->pos, &gCutsceneFocus->oPosX, 4000, 0x800, 0);
-        
-    //if (gCutsceneTimer == 399) {
-
-    //}
-
 }
 
 struct Cutscene sCutsceneStartLevel[] = {

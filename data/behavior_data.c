@@ -6147,4 +6147,11 @@ const BehaviorScript bhvCutsceneHandler[] = {
     END_LOOP(),
 };
 
+const BehaviorScript bhvLightingBolt[] = {
+    BEGIN(OBJ_LIST_DEFAULT),
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_lighting_bolt_loop),
+    END_LOOP(),
+};
+
 

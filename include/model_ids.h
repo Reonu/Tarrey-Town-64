@@ -27,6 +27,7 @@
 #define MODEL_LUIGI                       0x02        // unused
 #define MODEL_TOAD2                       0xFF
 #define MODEL_CASTLE_GROUNDS_WARP_PIPE    0xFE
+#define MODEL_LIGHTING_BOLT               0xFD
 
 /* Various static level geometry, the geo layout differs but terrain object presets treat them the same.*/
 

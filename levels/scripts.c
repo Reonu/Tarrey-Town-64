@@ -115,6 +115,7 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_LANTERN,                 lantern_geo),
     LOAD_MODEL_FROM_GEO(MODEL_TOAD2,                   toad2_geo),
     LOAD_MODEL_FROM_GEO(MODEL_CASTLE_GROUNDS_WARP_PIPE, warp_pipe_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_LIGHTING_BOLT,           lighting_bolt_geo),
     FREE_LEVEL_POOL(),
     CALL(/*arg*/ 0, /*func*/ lvl_init_from_save_file),
     LOOP_BEGIN(),
