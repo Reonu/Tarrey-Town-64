@@ -309,7 +309,14 @@ void rotate_triangle_vertices(Vec3s vertex1, Vec3s vertex2, Vec3s vertex3, s16 p
     f32 sinMYaw = sins(-yaw);
 
     Vec3f v1, v2, v3;
+    
+    if (gIsConsole) {
+        vertex1[0] *= 2;
+        vertex2[0] *= 2;
+        vertex3[0] *= 2;
+    }
 
+    
     v1[0] = vertex1[0];
     v1[1] = vertex1[1];
     v1[2] = vertex1[2];

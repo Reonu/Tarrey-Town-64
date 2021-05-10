@@ -202,7 +202,7 @@
 #define COL_TRI_INIT(surfType, triNum) surfType, triNum
 
 // Collision Tri
-#define COL_TRI(v1, v2, v3) v1, v2, v3
+#define COL_TRI(v1, v2, v3) v1, v2, v3, 0
 
 // Collision Tri With Special Params
 #define COL_TRI_SPECIAL(v1, v2, v3, param) v1, v2, v3, param
