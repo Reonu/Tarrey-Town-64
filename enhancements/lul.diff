@@ -1,0 +1,51 @@
+diff --git a/include/point_lights.h b/include/point_lights.h
+index 87ee92f..ed6fa38 100644
+--- a/include/point_lights.h
++++ b/include/point_lights.h
+@@ -41,6 +41,6 @@ void set_directional_light(Vec3f direction, s32 red, s32 green, s32 blue);
+ void set_ambient_light(s32 red, s32 green, s32 blue);
+ 
+ // Emits a point light with the given parameters
+-void emit_light(Vec3f pos, s32 red, s32 green, s32 blue, u32 quadraticFalloff, u32 linearFalloff, u32 constantFalloff);
++void emit_light(Vec3f pos, s32 red, s32 green, s32 blue, u32 constantFalloff, u32 linearFalloff, u32 quadraticFalloff);
+ 
+ #endif
+diff --git a/src/engine/behavior_script.c b/src/engine/behavior_script.c
+index bdc9c49..dad3ca9 100644
+--- a/src/engine/behavior_script.c
++++ b/src/engine/behavior_script.c
+@@ -1048,17 +1048,17 @@ void cur_obj_update(void) {
+         {
+             emit_light(gCurrentObject->header.gfx.pos,
+                        red, green, blue,
+-                       gCurrentObject->oLightQuadraticFalloff,
++                       gCurrentObject->oLightConstantFalloff,
+                        gCurrentObject->oLightLinearFalloff,
+-                       gCurrentObject->oLightConstantFalloff);
++                       gCurrentObject->oLightQuadraticFalloff);
+         }
+         else if (gMarioState->heldObj == gCurrentObject)
+         {
+             emit_light(gMarioState->marioBodyState->heldObjLastPosition,
+                        red, green, blue,
+-                       gCurrentObject->oLightQuadraticFalloff,
++                       gCurrentObject->oLightConstantFalloff,
+                        gCurrentObject->oLightLinearFalloff,
+-                       gCurrentObject->oLightConstantFalloff);
++                       gCurrentObject->oLightQuadraticFalloff);
+         }
+     }
+ }
+diff --git a/src/game/rendering_graph_node.c b/src/game/rendering_graph_node.c
+index 3bd6a29..d1530ce 100644
+--- a/src/game/rendering_graph_node.c
++++ b/src/game/rendering_graph_node.c
+@@ -552,7 +552,7 @@ void set_ambient_light(s32 red, s32 green, s32 blue)
+ }
+ 
+ // Emits a point light with the given parameters
+-void emit_light(Vec3f pos, s32 red, s32 green, s32 blue, u32 quadraticFalloff, u32 linearFalloff, u32 constantFalloff)
++void emit_light(Vec3f pos, s32 red, s32 green, s32 blue, u32 constantFalloff, u32 linearFalloff, u32 quadraticFalloff)
+ {
+     gPointLights[gPointLightCount].l.pl.colc[0] = gPointLights[gPointLightCount].l.pl.col[0] = red;
+     gPointLights[gPointLightCount].l.pl.colc[1] = gPointLights[gPointLightCount].l.pl.col[1] = green;

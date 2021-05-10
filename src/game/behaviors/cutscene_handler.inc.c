@@ -9,10 +9,10 @@ void bhv_cutscene_handler_init(void) {
 void bhv_cutscene_handler_loop(void) {
     if (gCustomCameraMode = 1) {
         switch (gMarioState->floor->force) {
-            case 0x00:
+            case 0x01:
                 s8DirModeBaseYaw = DEGREES(180); // Normal camera
                 break;
-            case 0x01:
+            case 0x02:
                 s8DirModeBaseYaw = DEGREES(270); // Rotate left
                 break;
             case 0x03:
@@ -21,11 +21,11 @@ void bhv_cutscene_handler_loop(void) {
             case 0x04:
                 s8DirModeBaseYaw = DEGREES(0); // Backtracking camera
                 break;
-            case 0x05:
+            case 0x06:
                 s8DirModeBaseYaw = DEGREES(180); //2D camera
                 break;
-            case 0x06:
-                s8DirModeBaseYaw = DEGREES(90); //top-down camera
+            case 0x07:
+                s8DirModeBaseYaw = DEGREES(180); //Top-down camera
                 break;
         }       
     }

@@ -19,6 +19,8 @@ const GeoLayout bob_area_1_geo[] = {
 				GEO_DISPLAY_LIST(1, bob_dl_Cylinder_mesh_layer_1),
 			GEO_CLOSE_NODE(),
 		GEO_CLOSE_NODE(),
+		GEO_TRANSLATE_NODE_WITH_DL(4, 8, 266, 5195, bob_dl_Plane_mesh_layer_4),
+		GEO_TRANSLATE_NODE_WITH_DL(1, -286, 167, 6865, bob_dl_PoliceCar_mesh_layer_1),
 		GEO_TRANSLATE_NODE(LAYER_OPAQUE, 1221, 1221, -4657),
 		GEO_OPEN_NODE(),
 			GEO_TRANSLATE_NODE(LAYER_OPAQUE, 18, -1011, 26),
@@ -121,7 +123,8 @@ const GeoLayout bob_area_1_geo[] = {
 				GEO_CLOSE_NODE(),
 			GEO_CLOSE_NODE(),
 		GEO_CLOSE_NODE(),
-		GEO_DISPLAY_LIST(1, bob_dl_ZZZFloor_mesh_layer_1),
+		GEO_TRANSLATE_NODE_WITH_DL(1, 176, 776, 1819, bob_dl_ZZZFloor_mesh_layer_1),
+		GEO_DISPLAY_LIST(1, bob_dl_ZZZTunnelOOB_mesh_layer_1),
 	GEO_CLOSE_NODE(),
 	GEO_RETURN(),
 };

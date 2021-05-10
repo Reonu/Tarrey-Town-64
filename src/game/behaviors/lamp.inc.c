@@ -2,13 +2,19 @@
 void bhv_lamp_loop(void) {
     Vec3f pos = {o->oPosX, o->oPosY, o->oPosZ};
     f32 rand = random_float();
-    if (((o->oBehParams >> 24) & 0xFF) == 0x01) {
-        if (rand < 0.95) {
-            emit_light(pos, 255, 255, 255, 20, 0, 0);
-        }
-    } else {
-        emit_light(pos, 255, 255, 255, 20, 0, 0);
+    switch ((o->oBehParams >> 24) & 0xFF) {
+        case 0x00:
+            emit_light(pos, 255, 255, 255, 0, 0, 20);
+            break;
+        case 0x01:
+            if (rand < 0.95) {
+                emit_light(pos, 255, 255, 255, 0, 0, 20);
+            }
+            break;
+        case 0x02:
+            if (rand > 0.5) {
+            emit_light(pos, 0, 0, 255, 0, 0, 20);
+            }
+            break;
     }
-
-    
 }
