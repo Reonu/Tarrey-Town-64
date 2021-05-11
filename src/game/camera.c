@@ -925,16 +925,23 @@ s32 update_8_directions_camera(struct Camera *c, Vec3f focus, Vec3f pos) {
     s16 camYaw = s8DirModeBaseYaw + s8DirModeYawOffset;
     s16 pitch;
     f32 baseDist;
-    if (gMarioState->floor->force == 0x06) {
-        pitch = DEGREES(1);
-        baseDist = 1300.0f;
-    } else if (gMarioState->floor->force == 0x07) {
-        pitch = DEGREES(50);
-        baseDist = 2000.0f;
-    } else {
-        pitch = look_down_slopes(camYaw);
-        baseDist = 1000.0f;
+    if (gMarioState->floor != NULL) {
+        switch ((gMarioState->floor->force >> 8) & 0xFF) {
+            case 0x06:
+                pitch = DEGREES(1);
+                baseDist = 1300.0f;
+                break;
+            case 0x07:
+                pitch = DEGREES(50);
+                baseDist = 2000.0f;
+                break;
+            default:
+                pitch = look_down_slopes(camYaw);
+                baseDist = 1000.0f;
+                break;
+        }
     }
+
     
     f32 posY;
     f32 focusY;
@@ -10832,7 +10839,7 @@ u8 sZoomOutAreaMasks[] = {
 	ZOOMOUT_AREA_MASK(0, 0, 0, 0, 0, 0, 0, 0), // Unused         | Unused
 	ZOOMOUT_AREA_MASK(0, 0, 0, 0, 1, 0, 0, 0), // BBH            | CCM
 	ZOOMOUT_AREA_MASK(0, 0, 0, 0, 0, 0, 0, 0), // CASTLE_INSIDE  | HMC
-	ZOOMOUT_AREA_MASK(1, 0, 0, 0, 1, 0, 0, 0), // SSL            | BOB
+	ZOOMOUT_AREA_MASK(1, 0, 0, 0, 1, 1, 0, 0), // SSL            | BOB
 	ZOOMOUT_AREA_MASK(1, 0, 0, 0, 1, 0, 0, 0), // SL             | WDW
 	ZOOMOUT_AREA_MASK(1, 0, 0, 0, 1, 1, 0, 0), // JRB            | THI
 	ZOOMOUT_AREA_MASK(0, 0, 0, 0, 1, 0, 0, 0), // TTC            | RR

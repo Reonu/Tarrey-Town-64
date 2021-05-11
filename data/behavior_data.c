@@ -1185,7 +1185,7 @@ const BehaviorScript bhvFlame[] = {
     //SET_INTERACT_TYPE(INTERACT_FLAME),
     //SET_HITBOX_WITH_OFFSET(/*Radius*/ 50, /*Height*/ 25, /*Downwards offset*/ 25),
     SET_LIGHT_COLOR(255,0,0),
-    SET_LIGHT_FALLOFF(10,0,0),
+    SET_LIGHT_FALLOFF(0,0,20),
     SET_INT(oIntangibleTimer, 0),
     CALL_NATIVE(bhv_init_room),
     BEGIN_LOOP(),
@@ -1193,6 +1193,25 @@ const BehaviorScript bhvFlame[] = {
         ANIMATE_TEXTURE(oAnimState, 2),
     END_LOOP(),
 };
+
+const BehaviorScript bhvFlameBig[] = {
+    BEGIN(OBJ_LIST_LEVEL),
+    OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE | OBJ_FLAG_EMIT_LIGHT),
+    BILLBOARD(),
+    SET_HOME(),
+    SCALE(/*Unused*/ 0, /*Field*/ 800),
+    //SET_INTERACT_TYPE(INTERACT_FLAME),
+    //SET_HITBOX_WITH_OFFSET(/*Radius*/ 50, /*Height*/ 25, /*Downwards offset*/ 25),
+    SET_LIGHT_COLOR(255,0,0),
+    SET_LIGHT_FALLOFF(0,0,25),
+    SET_INT(oIntangibleTimer, 0),
+    CALL_NATIVE(bhv_init_room),
+    BEGIN_LOOP(),
+        SET_INT(oInteractStatus, 0),
+        ANIMATE_TEXTURE(oAnimState, 2),
+    END_LOOP(),
+};
+
 
 const BehaviorScript bhvAnotherElavator[] = {
     BEGIN(OBJ_LIST_SURFACE),

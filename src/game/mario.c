@@ -1732,16 +1732,18 @@ s32 execute_mario_action(UNUSED struct Object *o) {
         if (gMarioState->floor == NULL) {
             return 0;
         }
-        if (gMarioState->floor->force == 0x06) {
-            if (g2DPosY) {
-                gMarioState->pos[2] = g2DPosY;
-            } else {
-                g2DPosY = gMarioState->pos[2];
-            }
-        } else {
-            g2DPosY = 0;
+        switch ((gMarioState->floor->force >> 8) & 0xFF)  {
+            case 0x06:
+                if (g2DPosY) {
+                    gMarioState->pos[2] = g2DPosY;
+                } else {
+                    g2DPosY = gMarioState->pos[2];
+                }
+                break;
+            default:
+                g2DPosY = 0;
+                break;
         }
-
         // The function can loop through many action shifts in one frame,
         // which can lead to unexpected sub-frame behavior. Could potentially hang
         // if a loop of actions were found, but there has not been a situation found.

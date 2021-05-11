@@ -8,7 +8,7 @@ void bhv_cutscene_handler_init(void) {
 
 void bhv_cutscene_handler_loop(void) {
     if (gCustomCameraMode = 1) {
-        switch (gMarioState->floor->force) {
+        switch ((gMarioState->floor->force >> 8) & 0xFF) {
             case 0x01:
                 s8DirModeBaseYaw = DEGREES(180); // Normal camera
                 break;

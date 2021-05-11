@@ -1,3 +1,4 @@
+#include "texscroll.h"
 
 #include <ultra64.h>
 
@@ -29,6 +30,7 @@
 #include "level_table.h"
 #include "course_table.h"
 #include "rumble_init.h"
+#include "src/game/object_helpers.h"
 
 #define PLAY_MODE_NORMAL 0
 #define PLAY_MODE_PAUSED 2
@@ -538,13 +540,12 @@ void warp_credits(void) {
 void check_instant_warp(void) {
     s16 cameraAngle;
     struct Surface *floor;
-
+    
     if (gCurrLevelNum == LEVEL_CASTLE
         && save_file_get_total_star_count(gCurrSaveFileNum - 1, COURSE_MIN - 1, COURSE_MAX - 1) >= 70) {
         return;
     }
-
-    if ((floor = gMarioState->floor) != NULL) {
+    if (((floor = gMarioState->floor) != NULL) && absf(gMarioState->pos[1] - gMarioState->floorHeight) < 4.0f) {
         s32 index = floor->type - SURFACE_INSTANT_WARP_1B;
         if (index >= INSTANT_WARP_INDEX_START && index < INSTANT_WARP_INDEX_STOP
             && gCurrentArea->instantWarps != NULL) {
@@ -1138,7 +1139,7 @@ s32 update_level(void) {
 
     switch (sCurrPlayMode) {
         case PLAY_MODE_NORMAL:
-            changeLevel = play_mode_normal();
+            changeLevel = play_mode_normal(); scroll_textures();
             break;
         case PLAY_MODE_PAUSED:
             changeLevel = play_mode_paused();

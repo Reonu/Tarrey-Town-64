@@ -128,5 +128,8 @@
     ],
     "24_custom_resurrection_rain": [
         "streamed_audio"
+    ],
+    "25_custom_resurrection_chase": [
+        "streamed_audio"
     ]
 }

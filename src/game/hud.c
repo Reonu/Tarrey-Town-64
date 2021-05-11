@@ -15,6 +15,8 @@
 #include "print.h"
 #include "engine/surface_load.h"
 
+#define HUD_BOTTOM_Y 20
+
 /* @file hud.c
  * This file implements HUD rendering and power meter animations.
  * That includes stars, lives, coins, camera status, power meter, timer
@@ -80,7 +82,7 @@ static s16 sPowerMeterStoredHealth;
 
 static struct PowerMeterHUD sPowerMeterHUD = {
     POWER_METER_HIDDEN,
-    140,
+    30,
     166,
     1.0,
 };
@@ -324,16 +326,18 @@ void render_debug_mode(void) {
 /**
  * Renders the amount of coins collected.
  */
+#define HUD_COINS 20
+
 void render_hud_coins(void) {
-    print_text(168, HUD_TOP_Y, "+"); // 'Coin' glyph
-    print_text(184, HUD_TOP_Y, "*"); // 'X' glyph
-    print_text_fmt_int(198, HUD_TOP_Y, "%d", gHudDisplay.coins);
+    print_text(HUD_COINS, HUD_BOTTOM_Y+20, "+"); // 'Coin' glyph
+    print_text(HUD_COINS+16, HUD_BOTTOM_Y+20, "*"); // 'X' glyph
+    print_text_fmt_int(HUD_COINS+30, HUD_BOTTOM_Y+20, "%d", gHudDisplay.coins);
 }
 
 #ifdef VERSION_JP
 #define HUD_STARS_X 73
 #else
-#define HUD_STARS_X 78
+#define HUD_STARS_X 20
 #endif
 
 /**
@@ -351,12 +355,12 @@ void render_hud_stars(void) {
         showX = 1;
     }
 
-    print_text(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(HUD_STARS_X), HUD_TOP_Y, "-"); // 'Star' glyph
+    print_text((HUD_STARS_X), HUD_BOTTOM_Y, "-"); // 'Star' glyph
     if (showX == 1) {
-        print_text(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(HUD_STARS_X) + 16, HUD_TOP_Y, "*"); // 'X' glyph
+        print_text((HUD_STARS_X) + 16, HUD_BOTTOM_Y, "*"); // 'X' glyph
     }
-    print_text_fmt_int((showX * 14) + GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(HUD_STARS_X - 16),
-                       HUD_TOP_Y, "%d", gHudDisplay.stars);
+    print_text_fmt_int((showX * 14) + (HUD_STARS_X + 16),
+                       HUD_BOTTOM_Y, "%d", gHudDisplay.stars);
 }
 
 /**
@@ -503,9 +507,9 @@ void render_hud(void) {
             render_hud_cannon_reticle();
         }
 
-        if (hudDisplayFlags & HUD_DISPLAY_FLAG_LIVES) {
+        /*if (hudDisplayFlags & HUD_DISPLAY_FLAG_LIVES) {
             render_hud_mario_lives();
-        }
+        }*/
 
         if (hudDisplayFlags & HUD_DISPLAY_FLAG_COIN_COUNT) {
             render_hud_coins();

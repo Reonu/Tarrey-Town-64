@@ -28,10 +28,16 @@
             "release_rate": 10,
             "envelope": "envelope",
             "sound": "24_custom_resurrection_rain"
+        },
+        "inst2": {
+            "release_rate": 10,
+            "envelope": "envelope",
+            "sound": "25_custom_resurrection_chase"
         }
     },
     "instrument_list": [
         "inst0",
-        "inst1"
+        "inst1",
+        "inst2"
     ]
 }
