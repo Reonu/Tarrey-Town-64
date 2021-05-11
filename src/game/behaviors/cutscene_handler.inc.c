@@ -3,11 +3,16 @@
 extern s16 s8DirModeBaseYaw;
 u8 cameraChange;
 void bhv_cutscene_handler_init(void) {
-    s8DirModeBaseYaw = DEGREES(180);
+    if (((o->oBehParams >> 24) & 0xFF) == 0x01) {
+        gCustomCameraMode = 0;
+    } else {
+        s8DirModeBaseYaw = DEGREES(180);
+    }
+    
 }
 
 void bhv_cutscene_handler_loop(void) {
-    if (gCustomCameraMode = 1) {
+    if (gCustomCameraMode == 1) {
         switch ((gMarioState->floor->force >> 8) & 0xFF) {
             case 0x01:
                 s8DirModeBaseYaw = DEGREES(180); // Normal camera

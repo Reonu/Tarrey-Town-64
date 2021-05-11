@@ -48,6 +48,27 @@ void floating_platform_act_0(void) {
 }
 
 void bhv_floating_platform_loop(void) {
+    s16 bparam = (o->oBehParams >> 24) & 0xFF;
+    switch (bparam) {
+        case 0x01:
+            cur_obj_scale(0.5f);
+            break;
+        case 0x02:
+            cur_obj_scale(0.75f);
+            break;
+        case 0x03:
+            cur_obj_scale(0.90f);
+            break;
+        case 0x04:
+            cur_obj_scale(1.10f);
+            break;
+        case 0x05:
+            cur_obj_scale(1.25f);
+            break;
+        case 0x06:
+            cur_obj_scale(1.50f);
+            break;
+    }
     o->oHomeY = floating_platform_find_home_y();
     if (o->oFloatingPlatformUnkF4 == 0)
         o->oAction = 0;

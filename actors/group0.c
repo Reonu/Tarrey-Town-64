@@ -31,3 +31,7 @@
 #include "toad2/anims/data.inc.c"
 #include "toad2/anims/table.inc.c"
 #include "lighting_bolt/model.inc.c"
+#include "wood_platform/model.inc.c"
+#include "wood_platform/collision.inc.c"
+#include "floating_box/model.inc.c"
+#include "floating_box/collision.inc.c"

@@ -352,4 +352,12 @@ extern const Gfx white_particle_small_unused_dl[];
 #include "toad2/anim_header.h"
 #include "lighting_bolt/geo_header.h"
 
+#include "wood_platform/geo_header.h"
+
+#include "wood_platform/collision_header.h"
+
+#include "floating_box/geo_header.h"
+
+#include "floating_box/collision_header.h"
+
 #endif

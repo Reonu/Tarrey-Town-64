@@ -6197,6 +6197,31 @@ const BehaviorScript bhvLamp[] = {
         CALL_NATIVE(bhv_lamp_loop),
     END_LOOP(),
 };
+const BehaviorScript bhvWoodPlatform[] = {
+    BEGIN(OBJ_LIST_SURFACE),
+    OR_INT(oFlags, (OBJ_FLAG_SET_FACE_YAW_TO_MOVE_YAW | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
+    LOAD_COLLISION_DATA(wood_platform_collision),
+    SET_FLOAT(oFloatingPlatformUnkFC, 64),
+    //SCALE(/*Unused*/ 0, /*Field*/ 150),
+    SET_HOME(),
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_floating_platform_loop),
+        CALL_NATIVE(load_object_collision_model),
+    END_LOOP(),
+};
+
+const BehaviorScript bhvFloatingBox[] = {
+    BEGIN(OBJ_LIST_SURFACE),
+    OR_INT(oFlags, (OBJ_FLAG_SET_FACE_YAW_TO_MOVE_YAW | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
+    LOAD_COLLISION_DATA(floating_box_collision),
+    SET_FLOAT(oFloatingPlatformUnkFC, 64),
+    //SCALE(/*Unused*/ 0, /*Field*/ 150),
+    SET_HOME(),
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_floating_platform_loop),
+        CALL_NATIVE(load_object_collision_model),
+    END_LOOP(),
+};
 
 
 

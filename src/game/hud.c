@@ -320,7 +320,7 @@ void render_debug_mode(void) {
     print_text_fmt_int(25, 80, "%d", gMarioState->pos[1]);
     print_text(10,100,"X");
     print_text_fmt_int(25, 100, "%d", gMarioState->pos[0]);
-    print_text_fmt_int(10, 120, "%d", gObjectCounter);
+    print_text_fmt_int(10, 120, "%d", gCustomCameraMode);
     print_fps(10,160);
 }
 /**
