@@ -10,6 +10,8 @@
 #include "rendering_graph_node.h"
 #include "shadow.h"
 #include "sm64.h"
+#define WIDESCREEN
+#define FORCE_CONSOLE
 
 #include <point_lights.h>
 
@@ -41,6 +43,7 @@
 s16 gMatStackIndex;
 Mat4 gMatStack[32];
 Mtx *gMatStackFixed[32];
+f32 aspect;
 
 /**
  * Animation nodes have state in global variables, so this struct captures
@@ -87,11 +90,11 @@ struct RenderModeContainer renderModeTable_1Cycle[2] = { { {
     { {
     /* z-buffered */
     G_RM_ZB_OPA_SURF,
-    G_RM_AA_ZB_OPA_SURF,
+    G_RM_ZB_OPA_SURF,
     G_RM_AA_ZB_OPA_DECAL,
     G_RM_AA_ZB_OPA_INTER,
     G_RM_AA_ZB_TEX_EDGE,
-    G_RM_AA_ZB_XLU_SURF,
+    G_RM_ZB_XLU_SURF,
     G_RM_AA_ZB_XLU_DECAL,
     G_RM_AA_ZB_XLU_INTER,
     } } };
@@ -110,11 +113,11 @@ struct RenderModeContainer renderModeTable_2Cycle[2] = { { {
     { {
     /* z-buffered */
     G_RM_ZB_OPA_SURF2,
-    G_RM_AA_ZB_OPA_SURF2,
+    G_RM_ZB_OPA_SURF2,
     G_RM_AA_ZB_OPA_DECAL2,
     G_RM_AA_ZB_OPA_INTER2,
     G_RM_AA_ZB_TEX_EDGE2,
-    G_RM_AA_ZB_XLU_SURF2,
+    G_RM_ZB_XLU_SURF2,
     G_RM_AA_ZB_XLU_DECAL2,
     G_RM_AA_ZB_XLU_INTER2,
     } } };
@@ -237,6 +240,7 @@ static void geo_process_ortho_projection(struct GraphNodeOrthoProjection *node) 
 /**
  * Process a perspective projection node.
  */
+extern u8 widescreen;
 static void geo_process_perspective(struct GraphNodePerspective *node) {
     if (node->fnNode.func != NULL) {
         node->fnNode.func(GEO_CONTEXT_RENDER, &node->fnNode.node, gMatStack[gMatStackIndex]);
@@ -248,7 +252,12 @@ static void geo_process_perspective(struct GraphNodePerspective *node) {
 #ifdef VERSION_EU
         f32 aspect = ((f32) gCurGraphNodeRoot->width / (f32) gCurGraphNodeRoot->height) * 1.1f;
 #else
-        f32 aspect = (f32) gCurGraphNodeRoot->width / (f32) gCurGraphNodeRoot->height;
+        if (widescreen == 1){
+            aspect = 1.775f;
+        }
+        else{
+            aspect = 1.33333f;
+        }
 #endif
 
         guPerspective(mtx, &perspNorm, node->fov, aspect, node->near / WORLD_SCALE, node->far / WORLD_SCALE, 1.0f);
@@ -270,11 +279,16 @@ static void geo_process_perspective(struct GraphNodePerspective *node) {
  */
 static void geo_process_level_of_detail(struct GraphNodeLevelOfDetail *node) {
     f32 distanceFromCam;
-    if (gIsConsole) {
+    #ifdef FORCE_CONSOLE
         distanceFromCam = -gMatStack[gMatStackIndex][3][2];
-    } else {
-        distanceFromCam = 50;
-    }
+    #else
+        if (gIsConsole) {
+            distanceFromCam = -gMatStack[gMatStackIndex][3][2];
+        } else {
+            distanceFromCam = 50;
+        }
+    #endif
+
 	
     if ((f32)node->minDistance <= distanceFromCam && distanceFromCam < (f32)node->maxDistance) {
         if (node->node.children != 0) {
@@ -341,7 +355,7 @@ u32 vec3f_vec3s_dist_sq(Vec3f p1, Vec3s p2)
     return (u32)(dx * dx) + (u32)(dy * dy) + (u32)(dz * dz);
 }
 
-#define MAX_POINT_LIGHT_DIST (3000)
+#define MAX_POINT_LIGHT_DIST (40000)
 
 #include "src/engine/surface_collision.h"
 
@@ -560,7 +574,7 @@ void set_ambient_light(s32 red, s32 green, s32 blue)
 }
 
 // Emits a point light with the given parameters
-void emit_light(Vec3f pos, s32 red, s32 green, s32 blue, u32 quadraticFalloff, u32 linearFalloff, u32 constantFalloff)
+void emit_light(Vec3f pos, s32 red, s32 green, s32 blue, u32 constantFalloff, u32 linearFalloff, u32 quadraticFalloff)
 {
     gPointLights[gPointLightCount].l.pl.colc[0] = gPointLights[gPointLightCount].l.pl.col[0] = red;
     gPointLights[gPointLightCount].l.pl.colc[1] = gPointLights[gPointLightCount].l.pl.col[1] = green;
@@ -659,7 +673,7 @@ void geo_process_camera(struct GraphNodeCamera *node) {
     }
 
     // Enable the lights closes to the given probe position as the level's lighting
-    levelLightsDL = createPointLightsDl(probePos, 300.0f);
+    levelLightsDL = createPointLightsDl(gMarioState->pos, 300.0f);
     gSPDisplayList(setLightsDL++, levelLightsDL);
 
     // Terminate the point lighting DL
@@ -1090,7 +1104,7 @@ static s32 obj_is_in_view(struct GraphNodeObject *node, Mat4 matrix) {
     // ! @bug The aspect ratio is not accounted for. When the fov value is 45,
     // the horizontal effective fov is actually 60 degrees, so you can see objects
     // visibly pop in or out at the edge of the screen.
-    halfFov = (gCurGraphNodeCamFrustum->fov / 2.0f + 1.0f) * 32768.0f / 180.0f + 0.5f;
+    halfFov = ((gCurGraphNodeCamFrustum->fov*aspect) / 2.0f + 1.0f) * 32768.0f / 180.0f + 0.5f;
 
     hScreenEdge = -matrix[3][2] * sins(halfFov) / coss(halfFov);
     // -matrix[3][2] is the depth, which gets multiplied by tan(halfFov) to get

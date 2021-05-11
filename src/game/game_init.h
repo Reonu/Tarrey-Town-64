@@ -43,6 +43,8 @@ extern struct GfxPool *gGfxPool;
 extern u8 gControllerBits;
 extern u8 gIsConsole;
 extern u8 gCustomCameraMode;
+extern u8 gCustomDebugMode;
+extern s32 g2DPosY;
 #ifdef EEP
 extern s8 gEepromProbe;
 #endif

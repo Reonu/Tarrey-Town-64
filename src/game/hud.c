@@ -297,6 +297,7 @@ void render_hud_power_meter(void) {
 #define HUD_TOP_Y 210
 #else
 #define HUD_TOP_Y 209
+#define HUD_BOTTOM_Y 20
 #endif
 
 /**
@@ -308,7 +309,18 @@ void render_hud_mario_lives(void) {
     print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(38), HUD_TOP_Y, "*"); // 'X' glyph
     print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(54), HUD_TOP_Y, "%d", renderBolt);
 }
-
+extern u32 gObjectCounter;
+void render_debug_mode(void) {
+    print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(170), HUD_BOTTOM_Y, "DEBUG MODE");
+    print_text(10,60,"Z");
+    print_text_fmt_int(25, 60, "%d", gMarioState->pos[2]);
+    print_text(10,80,"Y");
+    print_text_fmt_int(25, 80, "%d", gMarioState->pos[1]);
+    print_text(10,100,"X");
+    print_text_fmt_int(25, 100, "%d", gMarioState->pos[0]);
+    print_text_fmt_int(10, 120, "%d", gObjectCounter);
+    print_fps(10,160);
+}
 /**
  * Renders the amount of coins collected.
  */
@@ -523,6 +535,9 @@ void render_hud(void) {
         if (gSurfacePoolError & NOT_ENOUGH_ROOM_FOR_NODES)
         {
             print_text(10, 60, "SURFACE NODE POOL FULL");
+        }
+        if (gCustomDebugMode) {
+            render_debug_mode();
         }
     }
 }

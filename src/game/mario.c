@@ -1278,6 +1278,10 @@ void update_mario_button_inputs(struct MarioState *m) {
         m->input |= INPUT_A_DOWN;
     }
 
+    if (m->controller->buttonPressed & L_TRIG) {
+        gCustomDebugMode ^= 1;
+    }
+
     // Don't update for these buttons if squished.
     if (m->squishTimer == 0) {
         if (m->controller->buttonPressed & B_BUTTON) {
@@ -1727,6 +1731,15 @@ s32 execute_mario_action(UNUSED struct Object *o) {
         // If Mario is OOB, stop executing actions.
         if (gMarioState->floor == NULL) {
             return 0;
+        }
+        if (gMarioState->floor->force == 0x06) {
+            if (g2DPosY) {
+                gMarioState->pos[2] = g2DPosY;
+            } else {
+                g2DPosY = gMarioState->pos[2];
+            }
+        } else {
+            g2DPosY = 0;
         }
 
         // The function can loop through many action shifts in one frame,

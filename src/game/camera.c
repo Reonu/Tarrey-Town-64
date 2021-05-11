@@ -925,10 +925,10 @@ s32 update_8_directions_camera(struct Camera *c, Vec3f focus, Vec3f pos) {
     s16 camYaw = s8DirModeBaseYaw + s8DirModeYawOffset;
     s16 pitch;
     f32 baseDist;
-    if (gMarioState->floor->force == 0x05) {
-        pitch = 90;
-        baseDist = 1000.0f;
-    } else if (gMarioState->floor->force == 0x06) {
+    if (gMarioState->floor->force == 0x06) {
+        pitch = DEGREES(1);
+        baseDist = 1300.0f;
+    } else if (gMarioState->floor->force == 0x07) {
         pitch = DEGREES(50);
         baseDist = 2000.0f;
     } else {

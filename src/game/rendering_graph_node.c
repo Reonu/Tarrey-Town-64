@@ -1474,7 +1474,11 @@ void geo_process_root(struct GraphNodeRoot *node, Vp *b, Vp *c, s32 clearColor) 
     if (node->node.flags & GRAPH_RENDER_ACTIVE) {
         Mtx *initialMatrix;
         Vp *viewport = alloc_display_list(sizeof(*viewport));
-
+        if (gCustomDebugMode) {
+            print_text(10,40,"RAM");
+            print_text_fmt_int(50,40,"%d",main_pool_available());
+        }
+        
         gDisplayListHeap = alloc_only_pool_init(main_pool_available() - sizeof(struct AllocOnlyPool),
                                                 MEMORY_POOL_LEFT);
         initialMatrix = alloc_display_list(sizeof(*initialMatrix));
