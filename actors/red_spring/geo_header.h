@@ -1,0 +1,10 @@
+extern const GeoLayout red_spring_geo[];
+extern Vtx red_spring_Cube_mesh_layer_1_vtx_cull[8];
+extern Vtx red_spring_Cube_mesh_layer_1_vtx_0[96];
+extern Gfx red_spring_Cube_mesh_layer_1_tri_0[];
+extern Vtx red_spring_Cube_mesh_layer_1_vtx_1[28];
+extern Gfx red_spring_Cube_mesh_layer_1_tri_1[];
+extern Gfx mat_red_spring_Red[];
+extern Gfx mat_red_spring_Bars[];
+extern Gfx red_spring_Cube_mesh_layer_1[];
+extern Gfx red_spring_material_revert_render_settings[];

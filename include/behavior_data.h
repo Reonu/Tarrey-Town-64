@@ -552,5 +552,6 @@ extern const BehaviorScript bhvWoodPlatform[];
 extern const BehaviorScript bhvFloatingBox[];
 extern const BehaviorScript bhvFloatingStool[];
 extern const BehaviorScript bhvPlank[];
+extern const BehaviorScript bhvGreenSpring[];
 
 #endif // BEHAVIOR_DATA_H

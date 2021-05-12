@@ -1,0 +1,10 @@
+extern const GeoLayout yellow_spring_geo[];
+extern Vtx yellow_spring_Cube_mesh_layer_1_vtx_cull[8];
+extern Vtx yellow_spring_Cube_mesh_layer_1_vtx_0[96];
+extern Gfx yellow_spring_Cube_mesh_layer_1_tri_0[];
+extern Vtx yellow_spring_Cube_mesh_layer_1_vtx_1[28];
+extern Gfx yellow_spring_Cube_mesh_layer_1_tri_1[];
+extern Gfx mat_yellow_spring_Yellow[];
+extern Gfx mat_yellow_spring_Bars[];
+extern Gfx yellow_spring_Cube_mesh_layer_1[];
+extern Gfx yellow_spring_material_revert_render_settings[];

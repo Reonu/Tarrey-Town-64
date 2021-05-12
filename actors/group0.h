@@ -368,4 +368,12 @@ extern const Gfx white_particle_small_unused_dl[];
 
 #include "plank/collision_header.h"
 
+#include "yellow_spring/geo_header.h"
+
+#include "red_spring/geo_header.h"
+
+#include "green_spring/geo_header.h"
+
+#include "fan_spring/geo_header.h"
+
 #endif

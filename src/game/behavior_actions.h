@@ -556,6 +556,8 @@ void bhv_cutscene_handler_loop(void);
 void bhv_cutscene_handler_init(void);
 void bhv_lighting_bolt_loop(void);
 void bhv_lamp_loop(void);
+void bhv_green_spring_loop(void);
+void bhv_green_spring_init(void);
 
 Gfx *geo_move_mario_part_from_parent(s32 run, UNUSED struct GraphNode *node, Mat4 mtx);
 

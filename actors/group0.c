@@ -39,3 +39,7 @@
 #include "stool/collision.inc.c"
 #include "plank/model.inc.c"
 #include "plank/collision.inc.c"
+#include "yellow_spring/model.inc.c"
+#include "red_spring/model.inc.c"
+#include "green_spring/model.inc.c"
+#include "fan_spring/model.inc.c"

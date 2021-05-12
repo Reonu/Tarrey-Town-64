@@ -32,6 +32,11 @@
 #define MODEL_FLOATING_BOX                0xFB
 #define MODEL_STOOL                       0xFA
 #define MODEL_PLANK                       0xF9
+#define MODEL_GREEN_SPRING                0xF8        // Green spring
+#define MODEL_YELLOW_SPRING               0xF7        // Yellow spring
+#define MODEL_RED_SPRING                  0xF6        // Red spring
+#define MODEL_FAN_SPRING                  0xF5        // Fan spring
+
 
 /* Various static level geometry, the geo layout differs but terrain object presets treat them the same.*/
 
