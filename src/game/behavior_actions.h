@@ -356,6 +356,7 @@ void bhv_waterfall_sound_loop(void);
 void bhv_volcano_sound_loop(void);
 void bhv_castle_flag_init(void);
 void bhv_birds_sound_loop(void);
+void bhv_birds_sound_init(void);
 void bhv_ambient_sounds_init(void);
 void bhv_sand_sound_loop(void);
 void bhv_castle_cannon_grate_init(void);

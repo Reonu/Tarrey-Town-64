@@ -4540,6 +4540,7 @@ const BehaviorScript bhvCastleFlagWaving[] = {
 
 const BehaviorScript bhvBirdsSoundLoop[] = {
     BEGIN(OBJ_LIST_DEFAULT),
+    CALL_NATIVE(bhv_birds_sound_init),
     BEGIN_LOOP(),
         CALL_NATIVE(bhv_birds_sound_loop),
     END_LOOP(),
@@ -6203,6 +6204,7 @@ const BehaviorScript bhvWoodPlatform[] = {
     LOAD_COLLISION_DATA(wood_platform_collision),
     SET_FLOAT(oFloatingPlatformUnkFC, 64),
     //SCALE(/*Unused*/ 0, /*Field*/ 150),
+    SET_FLOAT(oCollisionDistance, 2000),
     SET_HOME(),
     BEGIN_LOOP(),
         CALL_NATIVE(bhv_floating_platform_loop),
@@ -6215,6 +6217,7 @@ const BehaviorScript bhvFloatingBox[] = {
     OR_INT(oFlags, (OBJ_FLAG_SET_FACE_YAW_TO_MOVE_YAW | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
     LOAD_COLLISION_DATA(floating_box_collision),
     SET_FLOAT(oFloatingPlatformUnkFC, 64),
+    SET_FLOAT(oCollisionDistance, 2000),
     //SCALE(/*Unused*/ 0, /*Field*/ 150),
     SET_HOME(),
     BEGIN_LOOP(),
@@ -6223,5 +6226,31 @@ const BehaviorScript bhvFloatingBox[] = {
     END_LOOP(),
 };
 
+const BehaviorScript bhvFloatingStool[] = {
+    BEGIN(OBJ_LIST_SURFACE),
+    OR_INT(oFlags, (OBJ_FLAG_SET_FACE_YAW_TO_MOVE_YAW | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
+    LOAD_COLLISION_DATA(stool_collision),
+    SET_FLOAT(oFloatingPlatformUnkFC, 64),
+    SET_FLOAT(oCollisionDistance, 2000),
+    //SCALE(/*Unused*/ 0, /*Field*/ 150),
+    SET_HOME(),
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_floating_platform_loop),
+        CALL_NATIVE(load_object_collision_model),
+    END_LOOP(),
+};
+const BehaviorScript bhvPlank[] = {
+    BEGIN(OBJ_LIST_SURFACE),
+    OR_INT(oFlags, (OBJ_FLAG_SET_FACE_YAW_TO_MOVE_YAW | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
+    LOAD_COLLISION_DATA(plank_collision),
+    SET_FLOAT(oFloatingPlatformUnkFC, 64),
+    SET_FLOAT(oCollisionDistance, 2000),
+    //SCALE(/*Unused*/ 0, /*Field*/ 150),
+    SET_HOME(),
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_floating_platform_loop),
+        CALL_NATIVE(load_object_collision_model),
+    END_LOOP(),
+};
 
 

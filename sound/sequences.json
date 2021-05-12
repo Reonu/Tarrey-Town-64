@@ -131,5 +131,8 @@
     ],
     "25_custom_resurrection_chase": [
         "streamed_audio"
+    ],
+    "26_custom_ancient_town": [
+        "streamed_audio"
     ]
 }

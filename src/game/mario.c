@@ -1491,9 +1491,9 @@ void update_mario_health(struct MarioState *m) {
                     // when in snow terrains lose 3 health.
                     // If using the debug level select, do not lose any HP to water.
                     if ((m->pos[1] >= (m->waterLevel - 140)) && !terrainIsSnow) {
-                        m->health += 0x1A;
+                        //m->health += 0x1A;
                     } else if (!gDebugLevelSelect) {
-                        m->health -= (terrainIsSnow ? 3 : 1);
+                        //m->health -= (terrainIsSnow ? 3 : 1);
                     }
                 }
             }
@@ -1731,6 +1731,11 @@ s32 execute_mario_action(UNUSED struct Object *o) {
         // If Mario is OOB, stop executing actions.
         if (gMarioState->floor == NULL) {
             return 0;
+        }
+        if (gCurrLevelNum == LEVEL_BOB && gCurrAreaIndex == 2) {
+            if (gMarioState->action & ACT_FLAG_SWIMMING) {
+                gMarioState->health -= 5;
+            }
         }
         switch ((gMarioState->floor->force >> 8) & 0xFF)  {
             case 0x06:

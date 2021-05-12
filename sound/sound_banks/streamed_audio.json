@@ -33,11 +33,17 @@
             "release_rate": 10,
             "envelope": "envelope",
             "sound": "25_custom_resurrection_chase"
+        },
+        "inst3": {
+            "release_rate": 10,
+            "envelope": "envelope",
+            "sound": "26_custom_ancient_town"
         }
     },
     "instrument_list": [
         "inst0",
         "inst1",
-        "inst2"
+        "inst2",
+        "inst3"
     ]
 }

@@ -6,6 +6,7 @@ void bhv_cutscene_handler_init(void) {
     if (((o->oBehParams >> 24) & 0xFF) == 0x01) {
         gCustomCameraMode = 0;
     } else {
+        gCustomCameraMode = 1;
         s8DirModeBaseYaw = DEGREES(180);
     }
     

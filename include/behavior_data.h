@@ -550,5 +550,7 @@ extern const BehaviorScript bhvKoopaToad[];
 extern const BehaviorScript bhvFlameBig[];
 extern const BehaviorScript bhvWoodPlatform[];
 extern const BehaviorScript bhvFloatingBox[];
+extern const BehaviorScript bhvFloatingStool[];
+extern const BehaviorScript bhvPlank[];
 
 #endif // BEHAVIOR_DATA_H

@@ -35,3 +35,7 @@
 #include "wood_platform/collision.inc.c"
 #include "floating_box/model.inc.c"
 #include "floating_box/collision.inc.c"
+#include "stool/model.inc.c"
+#include "stool/collision.inc.c"
+#include "plank/model.inc.c"
+#include "plank/collision.inc.c"

@@ -22,3 +22,5 @@
 #include "lighting_bolt/geo.inc.c"
 #include "wood_platform/geo.inc.c"
 #include "floating_box/geo.inc.c"
+#include "stool/geo.inc.c"
+#include "plank/geo.inc.c"

@@ -19,5 +19,8 @@ void bhv_lamp_loop(void) {
                 emit_light(pos2, 255, 0, 0, 0, 0, 20);
             }
             break;
+        case 0x03:
+            emit_light(pos, 255, 255, 255, 0, 0, 5);
+            break;
     }
 }

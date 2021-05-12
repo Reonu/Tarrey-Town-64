@@ -360,4 +360,12 @@ extern const Gfx white_particle_small_unused_dl[];
 
 #include "floating_box/collision_header.h"
 
+#include "stool/geo_header.h"
+
+#include "stool/collision_header.h"
+
+#include "plank/geo_header.h"
+
+#include "plank/collision_header.h"
+
 #endif

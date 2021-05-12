@@ -30,6 +30,8 @@
 #define MODEL_LIGHTING_BOLT               0xFD
 #define MODEL_WOOD_PLATFORM               0xFC
 #define MODEL_FLOATING_BOX                0xFB
+#define MODEL_STOOL                       0xFA
+#define MODEL_PLANK                       0xF9
 
 /* Various static level geometry, the geo layout differs but terrain object presets treat them the same.*/
 
