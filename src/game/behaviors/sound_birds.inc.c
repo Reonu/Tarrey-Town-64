@@ -17,7 +17,14 @@ void bhv_birds_sound_init(void) {
 
 
 void bhv_birds_sound_loop(void) {
-    Vec3f dir = {0.0f, -1.0f, 0.0f};
-    set_directional_light(dir, 25, 25, 25);
-    set_ambient_light(25,25,25);
+    if (gIsConsole) {
+        Vec3f dir = {0.0f, -1.0f, 0.0f};
+        set_directional_light(dir, 65, 65, 65);
+        set_ambient_light(65/3,65/3,65/3);
+    } else {
+        Vec3f dir = {0.0f, -1.0f, 0.0f};
+        set_directional_light(dir, 55, 55, 55);
+        set_ambient_light(55/3,55/3,55/3);
+    }
+
 }

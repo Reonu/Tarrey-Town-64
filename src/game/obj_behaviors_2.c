@@ -615,13 +615,13 @@ static s32 obj_resolve_collisions_and_turn(s16 targetYaw, s16 turnSpeed) {
 
 static void obj_die_if_health_non_positive(void) {
     if (o->oHealth <= 0) {
-        if (o->oDeathSound == 0) {
+        /*if (o->oDeathSound == 0) {
            play_sound(SOUND_OBJ_DEFAULT_DEATH, o);
         } else if (o->oDeathSound > 0) {
             play_sound(o->oDeathSound, o);
         } else {
             //spawn_mist_particles();
-        }
+        }*/
 
         if ((s32)o->oNumLootCoins < 0) {
             spawn_object(o, MODEL_BLUE_COIN, bhvMrIBlueCoin);
