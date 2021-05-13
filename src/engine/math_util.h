@@ -11,7 +11,7 @@
  * For double extended boundary hacks, a value of 1.5f or 2.0f is good.
  * For quadruple extended bounds, use 3.f or 4.f
  */
-#define WORLD_SCALE 4.f
+#define WORLD_SCALE 2.f
 
 /*
  * The sine and cosine tables overlap, but "#define gCosineTable (gSineTable +
