@@ -5,7 +5,7 @@ void bhv_lamp_loop(void) {
     f32 rand = random_float();
     switch ((o->oBehParams >> 24) & 0xFF) {
         case 0x00:
-            emit_light(pos, 255, 255, 255, 0, 0, 20);
+            emit_light(pos, 255, 255, 255, 0, 0, 15);
             break;
         case 0x01:
             if (rand < 0.95) {

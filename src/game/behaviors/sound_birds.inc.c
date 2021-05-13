@@ -6,9 +6,12 @@ void bhv_birds_sound_init(void) {
     u8 bparam1 = (o->oBehParams >> 24) & 0xFF;
     switch (bparam1) {
         case 0x01:
-            //stop_background_music(sCurrentBackgroundMusicSeqId);
+            stop_background_music(sCurrentBackgroundMusicSeqId);
             play_music(SEQ_PLAYER_LEVEL, SEQUENCE_ARGS(4, SEQ_STREAMED_ANCIENT_TOWN), 30);
-            break;            
+            break;  
+        case 0x02:  
+            stop_background_music(sCurrentBackgroundMusicSeqId);
+            play_music(SEQ_PLAYER_LEVEL, SEQUENCE_ARGS(4, SEQ_STREAMED_RESURRECTION_CHASE), 30);
     }
 }
 
