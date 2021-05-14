@@ -33,6 +33,7 @@ const LevelScript level_bob_entry[] = {
 	JUMP_LINK(script_func_global_15), 
 	LOAD_MODEL_FROM_GEO(MODEL_CAR_ORANGE, car_orange_geo), 
 	LOAD_MODEL_FROM_GEO(MODEL_SNUFIT, snufit_geo), 
+	LOAD_MODEL_FROM_GEO(MODEL_BOB_BUBBLY_TREE, bubbly_tree_geo), 
 
 	AREA(1, bob_area_1),
 		WARP_NODE(0x0A, LEVEL_BOB, 0x01, 0x0A, WARP_NO_CHECKPOINT),
