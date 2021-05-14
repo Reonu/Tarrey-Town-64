@@ -102,6 +102,8 @@
 #define /*0x13C*/ oParentRelativePosY         OBJECT_FIELD_F32(O_PARENT_RELATIVE_POS_INDEX + 1)
 #define /*0x140*/ oParentRelativePosZ         OBJECT_FIELD_F32(O_PARENT_RELATIVE_POS_INDEX + 2)
 #define /*0x144*/ oBehParams2ndByte           OBJECT_FIELD_S32(0x2F)
+#define           oBehParams1stByte           OBJECT_FIELD_S32(0x30)
+#define           oEnemy2D                 OBJECT_FIELD_S32(0X31)
 // 0x148 unused, possibly a third param byte.
 #define /*0x14C*/ oAction                     OBJECT_FIELD_S32(0x31)
 #define /*0x150*/ oSubAction                  OBJECT_FIELD_S32(0x32)

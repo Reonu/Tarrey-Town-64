@@ -112,6 +112,7 @@ void bhv_goomba_triplet_spawner_update(void) {
 void bhv_goomba_init(void) {
     o->oGoombaSize = o->oBehParams2ndByte & GOOMBA_BP_SIZE_MASK;
 
+
     o->oGoombaScale = sGoombaProperties[o->oGoombaSize].scale;
     o->oDeathSound = sGoombaProperties[o->oGoombaSize].deathSound;
 
@@ -121,6 +122,9 @@ void bhv_goomba_init(void) {
     o->oDamageOrCoinValue = sGoombaProperties[o->oGoombaSize].damage;
 
     o->oGravity = -8.0f / 3.0f * o->oGoombaScale;
+    if ((o->oBehParams1stByte = (o->oBehParams >> 24) & 0xFF) == 0x01) {
+        o->oEnemy2D = 1;
+    }
 }
 
 /**
@@ -269,6 +273,9 @@ void bhv_goomba_update(void) {
 
     f32 animSpeed;
 
+    if (o->oBehParams1stByte == 0x01) {
+        o->oPosZ = gMarioState->pos[2];
+    }
     if (obj_update_standard_actions(o->oGoombaScale)) {
         // If this goomba has a spawner and mario moved away from the spawner,
         // unload

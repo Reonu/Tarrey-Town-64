@@ -186,6 +186,8 @@ extern Gfx mat_castle_grounds_dl_Tent2[];
 extern Gfx mat_revert_castle_grounds_dl_Tent2[];
 extern Gfx mat_castle_grounds_dl_Tent3[];
 extern Gfx mat_revert_castle_grounds_dl_Tent3[];
+extern Gfx mat_castle_grounds_dl_TerrainWarp_layer1[];
+extern Gfx mat_revert_castle_grounds_dl_TerrainWarp_layer1[];
 extern Gfx mat_castle_grounds_dl_Bulding2[];
 extern Gfx mat_castle_grounds_dl_building[];
 extern Gfx mat_revert_castle_grounds_dl_building[];

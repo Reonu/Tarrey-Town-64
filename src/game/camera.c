@@ -935,6 +935,10 @@ s32 update_8_directions_camera(struct Camera *c, Vec3f focus, Vec3f pos) {
                 pitch = DEGREES(50);
                 baseDist = 2000.0f;
                 break;
+            case 0x09:
+                pitch = DEGREES(-30);
+                baseDist = 2000.0f;
+                break;
             default:
                 pitch = look_down_slopes(camYaw);
                 baseDist = 1000.0f;
@@ -6398,6 +6402,9 @@ struct CameraTrigger sCamCastleGrounds[] = {
 	NULL_TRIGGER
 };
 struct CameraTrigger sCamJRB[] = {
+	NULL_TRIGGER
+};
+struct CameraTrigger sCamWF[] = {
 	NULL_TRIGGER
 };
 struct CameraTrigger *sCameraTriggers[LEVEL_COUNT + 1] = {

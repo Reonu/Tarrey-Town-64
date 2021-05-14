@@ -753,12 +753,17 @@ s16 level_trigger_warp(struct MarioState *m, s32 warpOp) {
                 break;
 
             case WARP_OP_WARP_FLOOR:
-                sSourceWarpNodeId = WARP_NODE_WARP_FLOOR;
-                if (area_get_warp_node(sSourceWarpNodeId) == NULL) {
-                    if (m->numLives == 0) {
-                        sDelayedWarpOp = WARP_OP_GAME_OVER;
-                    } else {
-                        sSourceWarpNodeId = WARP_NODE_DEATH;
+                if (m->floor->type != SURFACE_DEATH_PLANE) {
+                    sSourceWarpNodeId = m->floor->force;
+                }
+                else{
+                    sSourceWarpNodeId = WARP_NODE_WARP_FLOOR;
+                    if (area_get_warp_node(sSourceWarpNodeId) == NULL) {
+                        if (m->numLives == 0) {
+                            sDelayedWarpOp = WARP_OP_GAME_OVER;
+                        } else {
+                            sSourceWarpNodeId = WARP_NODE_DEATH;
+                        }
                     }
                 }
                 sDelayedWarpTimer = 20;
@@ -1301,6 +1306,7 @@ s32 lvl_set_current_level(UNUSED s16 arg0, s32 levelNum) {
     sWarpCheckpointActive = FALSE;
     gCurrLevelNum = levelNum;
     gCurrCourseNum = gLevelToCourseNumTable[levelNum - 1];
+	if (gCurrLevelNum == LEVEL_WF) return 0;
 	if (gCurrLevelNum == LEVEL_BOB) return 0;
 		if (gCurrLevelNum == LEVEL_JRB) return 0;
 

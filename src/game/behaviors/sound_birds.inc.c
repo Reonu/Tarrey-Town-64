@@ -35,7 +35,7 @@ void bhv_birds_sound_loop(void) {
             set_ambient_light(lightLevel/3,lightLevel/3,lightLevel/3);
             break;
         case 0x02:
-            dir[0] = 1.0f;
+            dir[0] = 0.5f;
             dir[1] = 0.f;
             dir[2] = 0.f;
             

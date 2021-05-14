@@ -33,6 +33,12 @@ void bhv_cutscene_handler_loop(void) {
             case 0x07:
                 s8DirModeBaseYaw = DEGREES(180); //Top-down camera
                 break;
+            case 0x08:
+                s8DirModeBaseYaw = DEGREES(0); //Inverted 2D camera
+                break;
+            case 0x09:
+                s8DirModeBaseYaw = DEGREES(180); //Normal camera looking up
+                break;
         }       
     }
 }

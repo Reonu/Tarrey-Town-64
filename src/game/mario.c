@@ -1755,6 +1755,7 @@ s32 execute_mario_action(UNUSED struct Object *o) {
     }
         switch ((gMarioState->floor->force >> 8) & 0xFF)  {
             case 0x06:
+            case 0x08:
                 if (g2DPosY) {
                     gMarioState->pos[2] = g2DPosY;
                 } else {
