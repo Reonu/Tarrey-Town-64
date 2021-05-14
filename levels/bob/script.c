@@ -12,6 +12,7 @@
 #include "levels/scripts.h"
 
 #include "actors/common1.h"
+#include "actors/group14.h"
 
 #include "make_const_nonconst.h"
 #include "levels/bob/header.h"
@@ -21,8 +22,8 @@ const LevelScript level_bob_entry[] = {
 	LOAD_YAY0(0x07, _bob_segment_7SegmentRomStart, _bob_segment_7SegmentRomEnd), 
 	LOAD_YAY0_TEXTURE(0x09, _generic_yay0SegmentRomStart, _generic_yay0SegmentRomEnd), 
 	LOAD_YAY0(0x0A, _bidw_skybox_yay0SegmentRomStart, _bidw_skybox_yay0SegmentRomEnd), 
-	//LOAD_YAY0(0x05, _group3_yay0SegmentRomStart, _group3_yay0SegmentRomEnd), 
-	//LOAD_RAW(0x0C, _group3_geoSegmentRomStart, _group3_geoSegmentRomEnd), 
+	LOAD_YAY0(0x05, _group3_yay0SegmentRomStart, _group3_yay0SegmentRomEnd), 
+	LOAD_RAW(0x0C, _group3_geoSegmentRomStart, _group3_geoSegmentRomEnd), 
 	LOAD_YAY0(0x06, _group14_yay0SegmentRomStart, _group14_yay0SegmentRomEnd), 
 	LOAD_RAW(0x0D, _group14_geoSegmentRomStart, _group14_geoSegmentRomEnd), 
 	LOAD_YAY0(0x08, _common0_yay0SegmentRomStart, _common0_yay0SegmentRomEnd), 
@@ -34,7 +35,7 @@ const LevelScript level_bob_entry[] = {
 	JUMP_LINK(script_func_global_4), 
 	JUMP_LINK(script_func_global_15), 
 	LOAD_MODEL_FROM_GEO(MODEL_BOB_BUBBLY_TREE, bubbly_tree_geo), 
-	LOAD_MODEL_FROM_GEO(MODEL_BOB_CHAIN_CHOMP_GATE, bob_geo_000440), 
+	LOAD_MODEL_FROM_GEO(MODEL_CAR_ORANGE, car_orange_geo), 
 	LOAD_MODEL_FROM_GEO(MODEL_BOB_SEESAW_PLATFORM, bob_geo_000458), 
 	LOAD_MODEL_FROM_GEO(MODEL_BOB_BARS_GRILLS, bob_geo_000470), 
 
@@ -44,11 +45,11 @@ const LevelScript level_bob_entry[] = {
 		WARP_NODE(0xF1, LEVEL_BOB, 0x01, 0x0A, WARP_NO_CHECKPOINT),
 		INSTANT_WARP(0x00, 0x02, 14550, -300, -4699),
 		OBJECT(MODEL_NONE, -1467, -236, -1410, 0, 0, 0, 0x02000000, bhvCutsceneHandler),
+		OBJECT(MODEL_NONE, -69, -948, 976, 0, 0, 0, 0x00000000, bhvLightingBolt),
 		OBJECT(MODEL_RED_FLAME, -7463, 824, 3842, 0, 0, 0, 0x00000000, bhvFlameBig),
 		OBJECT(MODEL_RED_FLAME, -7510, 676, 4687, 0, 0, 0, 0x00000000, bhvFlameBig),
 		OBJECT(MODEL_RED_FLAME, -7866, 644, 4512, 0, 0, 0, 0x00000000, bhvFlameBig),
 		OBJECT(MODEL_RED_FLAME, -7493, 626, 3387, 0, 0, 0, 0x00000000, bhvFlameBig),
-		OBJECT(MODEL_NONE, -69, -948, 976, 0, 0, 0, 0x00000000, bhvLightingBolt),
 		OBJECT(MODEL_KOOPA_WITH_SHELL, 1240, 0, 842, 0, 0, 0, 0x00010000, bhvKoopa),
 		OBJECT(MODEL_KOOPA_WITH_SHELL, 1061, 0, 842, 0, 0, 0, 0x07000000, bhvKoopaToad),
 		OBJECT(MODEL_KOOPA_WITH_SHELL, -4575, 634, 2902, 0, 0, 0, 0x07000000, bhvKoopaToad),
@@ -122,16 +123,19 @@ const LevelScript level_bob_entry[] = {
 	AREA(3, bob_area_3),
 		WARP_NODE(0x0A, LEVEL_BOB, 0x01, 0x0A, WARP_NO_CHECKPOINT),
 		WARP_NODE(0xF1, LEVEL_BOB, 0x03, 0x0A, WARP_NO_CHECKPOINT),
+		OBJECT(MODEL_CAR_ORANGE, -23368, -5144, 890, 0, 0, 0, 0x00000000, bhvCar),
 		OBJECT(MODEL_CHUCKYA, 3606, 360, -728, 0, 0, 0, 0x00000000, bhvChuckya),
 		OBJECT(MODEL_CHUCKYA, 2147, 1417, -1149, 0, 0, 0, 0x00000000, bhvChuckya),
 		OBJECT(MODEL_CHUCKYA, -1785, 360, -1402, 0, 0, 0, 0x00000000, bhvChuckya),
-		OBJECT(MODEL_GREEN_SPRING, 13888, -4121, 301, 0, 0, 0, 0x01000000, bhvGreenSpring),
-		OBJECT(MODEL_NONE, 13809, -3528, 321, 0, 0, 0, 0x01000000, bhvLamp),
+		OBJECT(MODEL_CAR_ORANGE, -23368, -5144, -5853, 0, 0, 0, 0x00000000, bhvCar),
+		OBJECT(MODEL_NONE, 13809, -3528, 321, 0, 0, 0, 0x00000000, bhvLamp),
 		OBJECT(MODEL_NONE, -5209, 1626, 154, 0, 0, 0, 0x00000000, bhvLamp),
 		OBJECT(MODEL_NONE, 5229, 922, -1875, 0, 0, 0, 0x00000000, bhvLamp),
+		OBJECT(MODEL_NONE, -3575, 1224, -1923, 0, 0, 0, 0x00000000, bhvLamp),
 		OBJECT(MODEL_NONE, 13142, -2578, 1059, 0, 0, 0, 0x007F0000, bhvLightingBolt),
 		OBJECT(MODEL_NONE, 13855, -3657, 472, 0, 0, 0, 0xFFFF0000, bhvPoleGrabbing),
 		OBJECT(MODEL_NONE, 13888, -4121, 499, 0, 0, 0, 0x02000000, bhvBirdsSoundLoop),
+		OBJECT(MODEL_STAR, -5523, 3336, -1629, 0, 0, 0, 0x00000000, bhvStar),
 		OBJECT(MODEL_NONE, 15184, -4121, 9, 0, 0, 0, 0x000A0000, bhvInstantActiveWarp),
 		OBJECT(MODEL_YELLOW_SPRING, 4607, 478, -1559, 0, 0, 0, 0x00000000, bhvGreenSpring),
 		OBJECT(MODEL_YELLOW_SPRING, -7185, 434, -2801, 0, 0, 0, 0x00000000, bhvGreenSpring),

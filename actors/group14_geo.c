@@ -14,3 +14,5 @@
 #include "whomp/geo.inc.c"
 #include "chain_ball/geo.inc.c"
 #include "chain_chomp/geo.inc.c"
+
+#include "car_orange/geo.inc.c"

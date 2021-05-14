@@ -6266,3 +6266,14 @@ const BehaviorScript bhvGreenSpring[] = {
     END_LOOP(),
 };
 
+const BehaviorScript bhvCar[] = {
+    BEGIN(OBJ_LIST_GENACTOR),
+    OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
+    SET_HITBOX(/*Radius*/ 100, /*Height*/ 120),
+    SET_HOME(),
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_car_loop),
+        SET_INT(oInteractStatus, 0),
+    END_LOOP(),
+};
+

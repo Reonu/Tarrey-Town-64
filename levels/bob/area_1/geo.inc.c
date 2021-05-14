@@ -12,7 +12,7 @@ const GeoLayout bob_area_1_geo[] = {
 		GEO_TRANSLATE_NODE_WITH_DL(4, 1511, 312, -2702, bob_dl_Building_006_mesh_layer_4),
 		GEO_TRANSLATE_NODE_WITH_DL(4, -1749, 312, -146, bob_dl_Building_007_mesh_layer_4),
 		GEO_TRANSLATE_NODE_WITH_DL(4, -1749, 312, -2702, bob_dl_Building_008_mesh_layer_4),
-		GEO_TRANSLATE_NODE_WITH_DL(1, -7809, 486, 3771, bob_dl_Car_mesh_layer_1),
+		GEO_TRANSLATE_NODE_WITH_DL(1, -7809, 486, 3771, bob_dl_Car_001_mesh_layer_1),
 		GEO_TRANSLATE_NODE(LAYER_OPAQUE, 2876, 655, 2895),
 		GEO_OPEN_NODE(),
 			GEO_RENDER_RANGE(-2048, 4000),
