@@ -16,3 +16,6 @@
 #include "chain_chomp/geo.inc.c"
 
 #include "car_orange/geo.inc.c"
+
+
+#include "snufit/geo.inc.c"

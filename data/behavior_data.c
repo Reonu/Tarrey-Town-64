@@ -4671,7 +4671,9 @@ const BehaviorScript bhvVanishCap[] = {
 
 const BehaviorScript bhvStar[] = {
     BEGIN(OBJ_LIST_LEVEL),
-    OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
+    OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE | OBJ_FLAG_EMIT_LIGHT),
+    SET_LIGHT_COLOR(255, 255, 0),
+    SET_LIGHT_FALLOFF(0, 0, 10),
     CALL_NATIVE(bhv_init_room),
     CALL_NATIVE(bhv_collect_star_init),
     BEGIN_LOOP(),

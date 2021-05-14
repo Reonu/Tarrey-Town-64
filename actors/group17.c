@@ -6,10 +6,11 @@
 #include "types.h"
 #include "make_const_nonconst.h"
 
-#include "mr_i_eyeball/model.inc.c"
+
 UNUSED static const u64 binid_0 = 0;
 
 #include "mr_i_iris/model.inc.c"
+#include "mr_i_eyeball/model.inc.c"
 UNUSED static const u64 binid_1 = 1;
 
 #include "swoop/model.inc.c"
@@ -17,7 +18,7 @@ UNUSED static const u64 binid_1 = 1;
 #include "swoop/anims/table.inc.c"
 UNUSED static const u64 binid_2 = 2;
 
-#include "snufit/model.inc.c"
+
 UNUSED static const u64 binid_3 = 3;
 
 #include "dorrie/model.inc.c"

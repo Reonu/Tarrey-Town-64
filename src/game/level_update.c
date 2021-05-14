@@ -919,7 +919,7 @@ void update_hud_values(void) {
                 }
 
                 gHudDisplay.coins += 1;
-                play_sound(coinSound, gMarioState->marioObj->header.gfx.cameraToObject);
+                //play_sound(coinSound, gMarioState->marioObj->header.gfx.cameraToObject);
             }
         }
 

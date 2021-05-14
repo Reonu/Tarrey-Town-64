@@ -1421,6 +1421,13 @@ void update_mario_inputs(struct MarioState *m) {
         & (INT_STATUS_HOOT_GRABBED_BY_MARIO | INT_STATUS_MARIO_UNK1 | INT_STATUS_HIT_BY_SHOCKWAVE)) {
         m->input |= INPUT_UNKNOWN_10;
     }
+    if (m->controller->buttonPressed & L_JPAD) {
+        if (m->noclip) {
+            m->noclip = 0;
+        } else {
+            m->noclip = 1;
+        }
+    }
 
     // This function is located near other unused trampoline functions,
     // perhaps logically grouped here with the timers.
@@ -1737,6 +1744,15 @@ s32 execute_mario_action(UNUSED struct Object *o) {
                 gMarioState->health -= 5;
             }
         }
+    if (gMarioState->noclip == 0) {
+        if (gMarioState->action == ACT_DEBUG_FREE_MOVE) {
+            set_mario_action(gMarioState, ACT_IDLE, 0);
+        }
+    } else {
+        if (gMarioState->action != ACT_DEBUG_FREE_MOVE) {
+            set_mario_action(gMarioState, ACT_DEBUG_FREE_MOVE, 0);
+        }
+    }
         switch ((gMarioState->floor->force >> 8) & 0xFF)  {
             case 0x06:
                 if (g2DPosY) {

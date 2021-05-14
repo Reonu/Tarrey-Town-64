@@ -133,6 +133,24 @@ extern const Gfx whomp_seg6_dl_06020038[];
 extern const struct Animation *const whomp_seg6_anims_06020A04[];
 extern const Collision whomp_seg6_collision_06020A0C[];
 
+// snufit
+extern const GeoLayout snufit_geo[];
+extern const Gfx snufit_seg6_dl_060091E0[];
+extern const Gfx snufit_seg6_dl_06009278[];
+extern const Gfx snufit_seg6_dl_060092F0[];
+extern const Gfx snufit_seg6_dl_06009498[];
+extern const Gfx snufit_seg6_dl_06009668[];
+extern const Gfx snufit_seg6_dl_06009700[];
+extern const Gfx snufit_seg6_dl_06009748[];
+extern const Gfx snufit_seg6_dl_060098A0[];
+extern const Gfx snufit_seg6_dl_06009938[];
+extern const Gfx snufit_seg6_dl_060099D8[];
+extern const Gfx snufit_seg6_dl_06009A10[];
+extern const Gfx snufit_seg6_dl_06009B18[];
+extern const Gfx snufit_seg6_dl_06009B68[];
+
+
+
 #include "car_orange/geo_header.h"
 
 #endif
