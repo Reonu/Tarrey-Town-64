@@ -39,6 +39,9 @@
 #define MODEL_SNUFIT                      0xF4        // snufit_geo
 #define MODEL_MR_I_IRIS                   0xF3        // mr_i_iris_geo
 #define MODEL_MR_I                        0xF2        // mr_i_geo
+#define MODEL_KOOPA_SHELL_CUSTOM          0xF1
+#define MODEL_KOOPA_WITH_SHELL_CUSTOM     0xF0
+#define MODEL_KOOPA_WITHOUT_SHELL_CUSTOM  0xE9
 
 
 /* Various static level geometry, the geo layout differs but terrain object presets treat them the same.*/

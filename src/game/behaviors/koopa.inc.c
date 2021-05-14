@@ -267,9 +267,9 @@ void shelled_koopa_attack_handler(s32 attackType) {
         if (attackType != ATTACK_FROM_ABOVE && attackType != ATTACK_GROUND_POUND_OR_TWIRL) {
             o->oMoveAngleYaw = obj_angle_to_object(gMarioObject, o);
         }
-
-        cur_obj_set_model(MODEL_KOOPA_WITHOUT_SHELL);
-        spawn_object(o, MODEL_KOOPA_SHELL, bhvKoopaShell);
+        obj_die_if_health_non_positive();
+        //cur_obj_set_model(MODEL_KOOPA_WITHOUT_SHELL);
+        //spawn_object(o, MODEL_KOOPA_SHELL, bhvKoopaShell);
 
         //! Because bob-ombs/corkboxes come after koopa in processing order,
         //  they can interact with the koopa on the same frame that this

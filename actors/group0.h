@@ -378,4 +378,10 @@ extern const Gfx white_particle_small_unused_dl[];
 
 
 
+#include "koopa_shell_custom/geo_header.h"
+
+#include "koopa_with_shell_custom/geo_header.h"
+
+#include "koopa_without_shell_custom/geo_header.h"
+
 #endif
