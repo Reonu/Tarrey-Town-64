@@ -42,6 +42,7 @@
 #define MODEL_KOOPA_SHELL_CUSTOM          0xF1
 #define MODEL_KOOPA_WITH_SHELL_CUSTOM     0xF0
 #define MODEL_KOOPA_WITHOUT_SHELL_CUSTOM  0xE9
+#define MODEL_ROCK_BOULDER                0xE8
 
 
 /* Various static level geometry, the geo layout differs but terrain object presets treat them the same.*/

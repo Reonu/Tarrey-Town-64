@@ -126,6 +126,7 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_KOOPA_SHELL_CUSTOM,      koopa_shell_custom_geo),
     LOAD_MODEL_FROM_GEO(MODEL_KOOPA_WITH_SHELL_CUSTOM, koopa_with_shell_custom_geo),
     LOAD_MODEL_FROM_GEO(MODEL_KOOPA_WITHOUT_SHELL_CUSTOM, koopa_without_shell_custom_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_ROCK_BOULDER,             rock_boulder_geo),
     FREE_LEVEL_POOL(),
     CALL(/*arg*/ 0, /*func*/ lvl_init_from_save_file),
     LOOP_BEGIN(),

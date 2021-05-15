@@ -2,6 +2,15 @@
 #include "surface_terrains.h"
 extern s16 s8DirModeBaseYaw;
 u8 cameraChange;
+
+s16 approach_yaw(s16 curYaw, s16 target, f32 speed) {
+    return (s16) (target - approach_f32_asymptotic(
+        (s16) (target - curYaw),
+        0,
+        speed
+    ));
+}
+
 void bhv_cutscene_handler_init(void) {
     if (((o->oBehParams >> 24) & 0xFF) == 0x01) {
         gCustomCameraMode = 0;
@@ -13,32 +22,40 @@ void bhv_cutscene_handler_init(void) {
 }
 
 void bhv_cutscene_handler_loop(void) {
-    if (gCustomCameraMode == 1) {
         switch ((gMarioState->floor->force >> 8) & 0xFF) {
             case 0x01:
-                s8DirModeBaseYaw = DEGREES(180); // Normal camera
+                s8DirModeBaseYaw = approach_yaw(gLakituState.yaw, DEGREES(180), 0.2f);
+                gCustomCameraMode = 1;
                 break;
             case 0x02:
-                s8DirModeBaseYaw = DEGREES(270); // Rotate left
+                s8DirModeBaseYaw = approach_yaw(gLakituState.yaw, DEGREES(270), 0.2f); // Rotate left
+                gCustomCameraMode = 1;
                 break;
             case 0x03:
-                s8DirModeBaseYaw = DEGREES(90); // Rotate right
+                s8DirModeBaseYaw = approach_yaw(gLakituState.yaw, DEGREES(90), 0.2f); // Rotate right
+                gCustomCameraMode = 1;
                 break;
             case 0x04:
-                s8DirModeBaseYaw = DEGREES(0); // Backtracking camera
+                s8DirModeBaseYaw = approach_yaw(gLakituState.yaw, DEGREES(0), 0.2f); // Backtracking camera
+                gCustomCameraMode = 1;
                 break;
             case 0x06:
-                s8DirModeBaseYaw = DEGREES(180); //2D camera
+                s8DirModeBaseYaw = approach_yaw(gLakituState.yaw, DEGREES(180), 0.2f); //2D camera
+                gCustomCameraMode = 1;
                 break;
             case 0x07:
-                s8DirModeBaseYaw = DEGREES(180); //Top-down camera
+                s8DirModeBaseYaw = approach_yaw(gLakituState.yaw, DEGREES(180), 0.2f); //Top-down camera
+                gCustomCameraMode = 1;
                 break;
             case 0x08:
-                s8DirModeBaseYaw = DEGREES(0); //Inverted 2D camera
+                s8DirModeBaseYaw = approach_yaw(gLakituState.yaw, DEGREES(0), 0.2f); //Inverted 2D camera
+                gCustomCameraMode = 1;
                 break;
             case 0x09:
-                s8DirModeBaseYaw = DEGREES(180); //Normal camera looking up
+                s8DirModeBaseYaw = approach_yaw(gLakituState.yaw, DEGREES(180), 0.2f); //Normal camera looking up
+                gCustomCameraMode = 1;
                 break;
+            case 0x0A:
+                gCustomCameraMode = 0;
         }       
-    }
 }

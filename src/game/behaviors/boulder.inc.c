@@ -12,7 +12,6 @@ void bhv_big_boulder_init(void) {
 
 void boulder_act_1(void) {
     s16 sp1E;
-
     sp1E = object_step_without_floor_orient();
     if ((sp1E & 0x09) == 0x01 && o->oVelY > 10.0f) {
         cur_obj_play_sound_2(SOUND_GENERAL_GRINDEL_ROLL);
@@ -21,8 +20,10 @@ void boulder_act_1(void) {
 
     if (o->oForwardVel > 70.0)
         o->oForwardVel = 70.0f;
-
-    if (o->oPosY < -1000.0f)
+    if (o->oPosZ < -140) {
+        o->oForwardVel = 0;
+    }
+    if ((o->oPosY < -7500.0f) || (o->oTimer > 180))
         o->activeFlags = ACTIVE_FLAG_DEACTIVATED;
 }
 
@@ -51,17 +52,17 @@ void bhv_big_boulder_generator_loop(void) {
         o->oTimer = 0;
     }
 
-    if (!current_mario_room_check(4) || is_point_within_radius_of_mario(o->oPosX, o->oPosY, o->oPosZ, 1500))
-        return;
+    /*if (!current_mario_room_check(4) || is_point_within_radius_of_mario(o->oPosX, o->oPosY, o->oPosZ, 1500))
+        return;*/
 
     if (is_point_within_radius_of_mario(o->oPosX, o->oPosY, o->oPosZ, 6000)) {
         if ((o->oTimer & 0x3F) == 0) {
-            sp1C = spawn_object(o, MODEL_HMC_ROLLING_ROCK, bhvBigBoulder);
+            sp1C = spawn_object(o, MODEL_ROCK_BOULDER, bhvBigBoulder);
             sp1C->oMoveAngleYaw = random_float() * 4096.0f;
         }
     } else {
         if ((o->oTimer & 0x7F) == 0) {
-            sp1C = spawn_object(o, MODEL_HMC_ROLLING_ROCK, bhvBigBoulder);
+            sp1C = spawn_object(o, MODEL_ROCK_BOULDER, bhvBigBoulder);
             sp1C->oMoveAngleYaw = random_float() * 4096.0f;
         }
     }

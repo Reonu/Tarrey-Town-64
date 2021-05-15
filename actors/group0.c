@@ -49,3 +49,4 @@
 #include "koopa_shell_custom/model.inc.c"
 #include "koopa_with_shell_custom/model.inc.c"
 #include "koopa_without_shell_custom/model.inc.c"
+#include "rock_boulder/model.inc.c"

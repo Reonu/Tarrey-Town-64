@@ -936,8 +936,8 @@ s32 update_8_directions_camera(struct Camera *c, Vec3f focus, Vec3f pos) {
                 baseDist = 2000.0f;
                 break;
             case 0x09:
-                pitch = DEGREES(-30);
-                baseDist = 2000.0f;
+                pitch = DEGREES(-35);
+                baseDist = 3000.0f;
                 break;
             default:
                 pitch = look_down_slopes(camYaw);

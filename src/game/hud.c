@@ -331,7 +331,7 @@ void render_debug_mode(void) {
 void render_hud_coins(void) {
     print_text(HUD_COINS, HUD_BOTTOM_Y+20, "+"); // 'Coin' glyph
     print_text(HUD_COINS+16, HUD_BOTTOM_Y+20, "*"); // 'X' glyph
-    print_text_fmt_int(HUD_COINS+30, HUD_BOTTOM_Y+20, "%d", gHudDisplay.coins);
+    print_text_fmt_int(HUD_COINS+30, HUD_BOTTOM_Y+20, "%d", ((gMarioState->floor->force >> 8) & 0xFF));
 }
 
 #ifdef VERSION_JP

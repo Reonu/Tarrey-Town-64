@@ -6,8 +6,8 @@ static struct ObjectHitbox sRollingSphereHitbox = {
     /* damageOrCoinValue: */ 3,
     /* health:            */ 0,
     /* numLootCoins:      */ 0,
-    /* radius:            */ 210,
-    /* height:            */ 350,
+    /* radius:            */ 100,
+    /* height:            */ 250,
     /* hurtboxRadius:     */ 0,
     /* hurtboxHeight:     */ 0,
 };
