@@ -937,7 +937,8 @@ s32 update_8_directions_camera(struct Camera *c, Vec3f focus, Vec3f pos) {
                 break;
             case 0x09:
                 pitch = DEGREES(-35);
-                baseDist = 3000.0f;
+                baseDist = (3000.0f + ((gMarioState->pos[1] - -6415)/2));
+                print_text_fmt_int(10, 160, "%d", baseDist);
                 break;
             default:
                 pitch = look_down_slopes(camYaw);

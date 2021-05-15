@@ -41,10 +41,14 @@
 #define MODEL_MR_I                        0xF2        // mr_i_geo
 #define MODEL_KOOPA_SHELL_CUSTOM          0xF1
 #define MODEL_KOOPA_WITH_SHELL_CUSTOM     0xF0
-#define MODEL_KOOPA_WITHOUT_SHELL_CUSTOM  0xE9
-#define MODEL_ROCK_BOULDER                0xE8
-#define MODEL_TOAD_BUILDER                0xE7
-#define MODEL_TOAD_BUILDER_HAMMER         0xE6
+#define MODEL_KOOPA_WITHOUT_SHELL_CUSTOM  0xEF
+#define MODEL_ROCK_BOULDER                0xEE
+#define MODEL_TOAD_BUILDER                0xED
+#define MODEL_TOAD_BUILDER_HAMMER         0xEC
+#define MODEL_BULLY                       0xEB        // bully_geo
+#define MODEL_DL_MONTY_MOLE_HOLE          0xEA        // monty_mole_hole_seg5_dl_05000840
+#define MODEL_MONTY_MOLE                  0xE9        // monty_mole_geo
+#define MODEL_FWOOSH                      0xE8        // fwoosh_geo
 
 
 /* Various static level geometry, the geo layout differs but terrain object presets treat them the same.*/
@@ -364,7 +368,7 @@
 
 // group 2
 #define MODEL_BLARGG                      0x54        // blargg_geo
-#define MODEL_BULLY                       0x56        // bully_geo
+
 #define MODEL_BULLY_BOSS                  0x57        // bully_boss_geo
 
 // group 3
@@ -388,10 +392,8 @@
 #define MODEL_EYEROK_RIGHT_HAND           0x59        // eyerok_right_hand_geo
 
 // group 6
-#define MODEL_DL_MONTY_MOLE_HOLE          0x54        // monty_mole_hole_seg5_dl_05000840
-#define MODEL_MONTY_MOLE                  0x55        // monty_mole_geo
+
 #define MODEL_UKIKI                       0x56        // ukiki_geo
-#define MODEL_FWOOSH                      0x57        // fwoosh_geo
 
 // group 7
 #define MODEL_SPINDRIFT                   0x54        // spindrift_geo

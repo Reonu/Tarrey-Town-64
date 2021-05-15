@@ -376,6 +376,60 @@ extern const Gfx white_particle_small_unused_dl[];
 
 #include "fan_spring/geo_header.h"
 
+// bully
+extern const GeoLayout bully_geo[];
+extern const GeoLayout bully_boss_geo[];
+extern const Gfx bully_seg5_dl_050002E0[];
+extern const Gfx bully_seg5_dl_05000398[];
+extern const Gfx bully_seg5_dl_05003708[];
+extern const Gfx bully_seg5_dl_050037A0[];
+extern const Gfx bully_seg5_dl_05003838[];
+extern const Gfx bully_seg5_dl_05003878[];
+extern const Gfx bully_seg5_dl_05003CD0[];
+extern const Gfx bully_seg5_dl_05003D08[];
+extern const Gfx bully_seg5_dl_05003D40[];
+extern const Gfx bully_seg5_dl_05003E38[];
+extern const Gfx bully_seg5_dl_05003E70[];
+extern const Gfx bully_seg5_dl_05003EA8[];
+extern const Gfx bully_seg5_dl_05003F80[];
+extern const Gfx bully_seg5_dl_05003FC8[];
+extern const struct Animation *const bully_seg5_anims_0500470C[];
+
+// fwoosh
+extern const GeoLayout fwoosh_geo[];
+extern const Gfx fwoosh_seg5_dl_05016008[];
+extern const Gfx fwoosh_seg5_dl_05016040[];
+
+// monty_mole
+extern const GeoLayout monty_mole_geo[];
+extern const Gfx monty_mole_seg5_dl_05003208[];
+extern const Gfx monty_mole_seg5_dl_050032A0[];
+extern const Gfx monty_mole_seg5_dl_05003438[];
+extern const Gfx monty_mole_seg5_dl_050034A0[];
+extern const Gfx monty_mole_seg5_dl_05003518[];
+extern const Gfx monty_mole_seg5_dl_05003730[];
+extern const Gfx monty_mole_seg5_dl_050037A8[];
+extern const Gfx monty_mole_seg5_dl_05003820[];
+extern const Gfx monty_mole_seg5_dl_05003938[];
+extern const Gfx monty_mole_seg5_dl_050039D0[];
+extern const Gfx monty_mole_seg5_dl_05003B68[];
+extern const Gfx monty_mole_seg5_dl_05003BD0[];
+extern const Gfx monty_mole_seg5_dl_05003C48[];
+extern const Gfx monty_mole_seg5_dl_05003E60[];
+extern const Gfx monty_mole_seg5_dl_05003ED8[];
+extern const Gfx monty_mole_seg5_dl_05003F50[];
+extern const Gfx monty_mole_seg5_dl_050042B8[];
+extern const Gfx monty_mole_seg5_dl_05004368[];
+extern const Gfx monty_mole_seg5_dl_050044B0[];
+extern const Gfx monty_mole_seg5_dl_050049B0[];
+extern const Gfx monty_mole_seg5_dl_05004A10[];
+extern const Gfx monty_mole_seg5_dl_05004B50[];
+extern const Gfx monty_mole_seg5_dl_05004BE0[];
+extern const Gfx monty_mole_seg5_dl_05004C00[];
+extern const Gfx monty_mole_seg5_dl_05004CE8[];
+extern const Gfx monty_mole_seg5_dl_05004D30[];
+extern const struct Animation *const monty_mole_seg5_anims_05007248[];
+
 
 
 #include "koopa_shell_custom/geo_header.h"

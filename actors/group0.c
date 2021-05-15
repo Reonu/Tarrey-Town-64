@@ -52,3 +52,15 @@
 #include "rock_boulder/model.inc.c"
 #include "toad_builder/model.inc.c"
 #include "toad_builder_hammer/model.inc.c"
+
+#include "bully/model.inc.c"
+#include "bully/anims/data.inc.c"
+#include "bully/anims/table.inc.c"
+
+#include "monty_mole_hole/model.inc.c"
+
+#include "monty_mole/model.inc.c"
+#include "monty_mole/anims/data.inc.c"
+#include "monty_mole/anims/table.inc.c"
+
+#include "fwoosh/model.inc.c"

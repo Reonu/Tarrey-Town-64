@@ -29,6 +29,7 @@
 #include "green_spring/geo.inc.c"
 #include "fan_spring/geo.inc.c"
 
+#include "bully/geo.inc.c"
 
 #include "koopa_shell_custom/geo.inc.c"
 #include "koopa_with_shell_custom/geo.inc.c"
@@ -36,3 +37,6 @@
 #include "rock_boulder/geo.inc.c"
 #include "toad_builder/geo.inc.c"
 #include "toad_builder_hammer/geo.inc.c"
+
+#include "monty_mole/geo.inc.c"
+#include "fwoosh/geo.inc.c"
