@@ -10,6 +10,9 @@ const GeoLayout wf_area_1_geo[] = {
 			GEO_BRANCH(1, wf_dl_CRoom3_geo),
 		GEO_CLOSE_NODE(),
 		GEO_TRANSLATE_NODE(LAYER_OPAQUE, -9598, -4115, -3253),
+		GEO_OPEN_NODE(),
+			GEO_TRANSLATE_NODE_WITH_DL(1, 11324, 6755, 5669, wf_dl_Room_3_001_mesh_layer_1),
+		GEO_CLOSE_NODE(),
 	GEO_CLOSE_NODE(),
 	GEO_RETURN(),
 };
@@ -73,7 +76,7 @@ const GeoLayout wf_dl_CRoom3_geo[] = {
 					GEO_DISPLAY_LIST(5, wf_dl_LavaSemitransparent_mesh_layer_5),
 				GEO_CLOSE_NODE(),
 			GEO_CLOSE_NODE(),
-			GEO_TRANSLATE_NODE_WITH_DL(1, -608, -1998, -157, wf_dl_Room_3_mesh_layer_1),
+			GEO_TRANSLATE_NODE_WITH_DL(1, -1658, -1587, -6644, wf_dl_Room_3_mesh_layer_1),
 		GEO_CLOSE_NODE(),
 	GEO_CLOSE_NODE(),
 	GEO_RETURN(),
