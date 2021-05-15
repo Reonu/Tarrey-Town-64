@@ -44,6 +44,7 @@
 #define MODEL_KOOPA_WITHOUT_SHELL_CUSTOM  0xE9
 #define MODEL_ROCK_BOULDER                0xE8
 #define MODEL_TOAD_BUILDER                0xE7
+#define MODEL_TOAD_BUILDER_HAMMER         0xE6
 
 
 /* Various static level geometry, the geo layout differs but terrain object presets treat them the same.*/

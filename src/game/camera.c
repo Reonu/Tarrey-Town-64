@@ -1197,26 +1197,26 @@ void mode_8_directions_camera(struct Camera *c) {
 
     radial_camera_input(c, 0.f);
     if (gCustomCameraMode == 0) {
-        if (gPlayer1Controller->buttonPressed & R_JPAD) {
+        /*if (gPlayer1Controller->buttonPressed & R_JPAD) {
             s8DirModeYawOffset += DEGREES(45);
             play_sound_cbutton_side();
         }
         if (gPlayer1Controller->buttonPressed & L_JPAD) {
             s8DirModeYawOffset -= DEGREES(45);
             play_sound_cbutton_side();
-        }
-        else if (gPlayer1Controller->buttonPressed & U_JPAD) {
+        }*/
+        /*else if (gPlayer1Controller->buttonPressed & U_JPAD) {
             s8DirModeYawOffset = -gMarioState->faceAngle[1]-0x8000;
-        }
-        else if (gPlayer1Controller->buttonDown & L_CBUTTONS) {
+        }*/
+        if (gPlayer1Controller->buttonDown & L_CBUTTONS) {
             s8DirModeYawOffset -= DEGREES(4);
         }
         else if (gPlayer1Controller->buttonDown & R_CBUTTONS) {
             s8DirModeYawOffset += DEGREES(4);
         }
-        else if (gPlayer1Controller->buttonPressed & D_JPAD) {
+        /*else if (gPlayer1Controller->buttonPressed & D_JPAD) {
             s8DirModeYawOffset = s8DirModeYawOffset&0xE000;
-        }
+        }*/
     }
     
 
@@ -4850,15 +4850,17 @@ void play_camera_buzz_if_c_sideways(void) {
 }
 
 void play_sound_cbutton_up(void) {
-    play_sound(SOUND_MENU_CAMERA_ZOOM_IN, gGlobalSoundSource);
+    //play_sound(SOUND_MENU_CAMERA_ZOOM_IN, gGlobalSoundSource);
 }
 
 void play_sound_cbutton_down(void) {
-    play_sound(SOUND_MENU_CAMERA_ZOOM_OUT, gGlobalSoundSource);
+    //play_sound(SOUND_MENU_CAMERA_ZOOM_OUT, gGlobalSoundSource);
 }
 
 void play_sound_cbutton_side(void) {
-    play_sound(SOUND_MENU_CAMERA_TURN, gGlobalSoundSource);
+    if (gCustomCameraMode) {
+        play_sound(SOUND_MENU_CAMERA_BUZZ, gGlobalSoundSource);
+    }
 }
 
 void play_sound_button_change_blocked(void) {

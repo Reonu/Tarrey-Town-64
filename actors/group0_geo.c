@@ -35,3 +35,4 @@
 #include "koopa_without_shell_custom/geo.inc.c"
 #include "rock_boulder/geo.inc.c"
 #include "toad_builder/geo.inc.c"
+#include "toad_builder_hammer/geo.inc.c"

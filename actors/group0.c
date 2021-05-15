@@ -51,3 +51,4 @@
 #include "koopa_without_shell_custom/model.inc.c"
 #include "rock_boulder/model.inc.c"
 #include "toad_builder/model.inc.c"
+#include "toad_builder_hammer/model.inc.c"

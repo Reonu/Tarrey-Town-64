@@ -449,10 +449,15 @@ void render_hud_camera_status(void) {
             render_hud_tex_lut(x + 16, y, (*cameraLUT)[GLYPH_CAM_MARIO_HEAD]);
             break;
         case CAM_STATUS_LAKITU:
-            render_hud_tex_lut(x + 16, y, (*cameraLUT)[GLYPH_CAM_LAKITU_HEAD]);
+            if (gCustomCameraMode) {
+                render_hud_tex_lut(x + 16, y, (*cameraLUT)[GLYPH_CAM_FIXED]);
+            } else {
+                render_hud_tex_lut(x + 16, y, (*cameraLUT)[GLYPH_CAM_LAKITU_HEAD]);
+            }
+            
             break;
         case CAM_STATUS_FIXED:
-            render_hud_tex_lut(x + 16, y, (*cameraLUT)[GLYPH_CAM_FIXED]);
+            
             break;
     }
 

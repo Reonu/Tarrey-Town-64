@@ -388,4 +388,6 @@ extern const Gfx white_particle_small_unused_dl[];
 
 #include "toad_builder/geo_header.h"
 
+#include "toad_builder_hammer/geo_header.h"
+
 #endif

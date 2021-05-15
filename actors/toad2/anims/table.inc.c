@@ -5,5 +5,7 @@ const struct Animation *const toad2_anims[] = {
 
 	&toad2_anim_ToadBuilding,
 
+	&toad2_anim_Armature_005Action,
+
 	NULL,
 };
