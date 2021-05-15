@@ -6287,3 +6287,15 @@ const BehaviorScript bhvWarpStalker[] = {
         CALL_NATIVE(bhv_warp_stalker_loop),
     BREAK(),
 };
+
+const BehaviorScript bhvSinkingLavaPlatform[] = {
+    BEGIN(OBJ_LIST_SURFACE),
+    OR_INT(oFlags, (OBJ_FLAG_COMPUTE_DIST_TO_MARIO | OBJ_FLAG_SET_FACE_YAW_TO_MOVE_YAW | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
+    LOAD_COLLISION_DATA(lava_platform_collision),
+    SET_FLOAT(oCollisionDistance, 2000),
+    SET_HOME(),
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_bitfs_sinking_platform_loop),
+        CALL_NATIVE(load_object_collision_model),
+    END_LOOP(),
+};

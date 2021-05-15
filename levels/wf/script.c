@@ -95,6 +95,8 @@ const LevelScript level_wf_entry[] = {
 		OBJECT(MODEL_EXCLAMATION_BOX, 5051, 4353, 12791, 0, 0, 0, 0x00000000, bhvExclamationBox),
 		OBJECT(MODEL_YELLOW_SPRING, 999, -1150, 14499, 0, 0, 0, 0x00000000, bhvGreenSpring),
 		OBJECT(MODEL_YELLOW_SPRING, 3050, -348, 11067, 0, 0, 0, 0x00000000, bhvGreenSpring),
+		OBJECT(MODEL_LAVA_PLATFORM, 8193, 7113, -2758, 0, 90, 0, 0x00000000, bhvSinkingLavaPlatform),
+		OBJECT(MODEL_LAVA_PLATFORM, 8193, 7113, -4034, 0, 90, 0, 0x01001000, bhvSinkingLavaPlatform),
 		OBJECT(MODEL_NONE, -14545, -7478, -1292, 0, 0, 0, 0x000A0000, bhvSpinAirborneWarp),
 		MARIO_POS(0x01, 0, -14545, -7478, -1292),
 		TERRAIN(wf_area_1_collision),

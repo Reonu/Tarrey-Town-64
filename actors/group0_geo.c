@@ -42,3 +42,4 @@
 #include "fwoosh/geo.inc.c"
 
 #include "monty_mole_hole_custom/geo.inc.c"
+#include "lava_platform/geo.inc.c"
