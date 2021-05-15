@@ -386,4 +386,6 @@ extern const Gfx white_particle_small_unused_dl[];
 
 #include "rock_boulder/geo_header.h"
 
+#include "toad_builder/geo_header.h"
+
 #endif
