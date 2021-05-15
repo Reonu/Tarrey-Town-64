@@ -64,3 +64,4 @@
 #include "monty_mole/anims/table.inc.c"
 
 #include "fwoosh/model.inc.c"
+#include "monty_mole_hole_custom/model.inc.c"

@@ -554,4 +554,5 @@ extern const BehaviorScript bhvFloatingStool[];
 extern const BehaviorScript bhvPlank[];
 extern const BehaviorScript bhvGreenSpring[];
 extern const BehaviorScript bhvCar[];
+extern const BehaviorScript bhvWarpStalker[];
 #endif // BEHAVIOR_DATA_H

@@ -41,6 +41,15 @@ void bhv_birds_sound_loop(void) {
             
             set_directional_light(dir, 255, 255, 150);
             set_ambient_light(255/3,255/3,150/3);
+            break;
+        case 0x03:
+            dir[0] = 0.f;
+            dir[1] = -0.9f;
+            dir[2] = 0.f;
+            
+            set_directional_light(dir, 255, 255, 150);
+            set_ambient_light(255/3,255/3,150/3);
+            break;
     }
 
 }

@@ -3572,6 +3572,9 @@ const BehaviorScript bhvUnlockDoorStar[] = {
 };
 
 const BehaviorScript bhvInstantActiveWarp[] = {
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_warp_stalker_loop),
+    END_LOOP(),
     BREAK(),
 };
 
@@ -6279,3 +6282,8 @@ const BehaviorScript bhvCar[] = {
     END_LOOP(),
 };
 
+const BehaviorScript bhvWarpStalker[] = {
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_warp_stalker_loop),
+    BREAK(),
+};

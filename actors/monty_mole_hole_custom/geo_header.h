@@ -1,0 +1,7 @@
+extern const GeoLayout monty_mole_hole_custom_geo[];
+extern Vtx monty_mole_hole_custom_Monty_mole_hole_custom_mesh_layer_1_vtx_cull[8];
+extern Vtx monty_mole_hole_custom_Monty_mole_hole_custom_mesh_layer_1_vtx_0[17];
+extern Gfx monty_mole_hole_custom_Monty_mole_hole_custom_mesh_layer_1_tri_0[];
+extern Gfx mat_monty_mole_hole_custom_black_hole[];
+extern Gfx monty_mole_hole_custom_Monty_mole_hole_custom_mesh_layer_1[];
+extern Gfx monty_mole_hole_custom_material_revert_render_settings[];

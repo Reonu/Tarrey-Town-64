@@ -40,3 +40,5 @@
 
 #include "monty_mole/geo.inc.c"
 #include "fwoosh/geo.inc.c"
+
+#include "monty_mole_hole_custom/geo.inc.c"

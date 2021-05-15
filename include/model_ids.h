@@ -46,7 +46,7 @@
 #define MODEL_TOAD_BUILDER                0xED
 #define MODEL_TOAD_BUILDER_HAMMER         0xEC
 #define MODEL_BULLY                       0xEB        // bully_geo
-#define MODEL_DL_MONTY_MOLE_HOLE          0xEA        // monty_mole_hole_seg5_dl_05000840
+#define MODEL_MONTY_MOLE_HOLE_CUSTOM      0xEA
 #define MODEL_MONTY_MOLE                  0xE9        // monty_mole_geo
 #define MODEL_FWOOSH                      0xE8        // fwoosh_geo
 
@@ -394,6 +394,7 @@
 // group 6
 
 #define MODEL_UKIKI                       0x56        // ukiki_geo
+#define MODEL_DL_MONTY_MOLE_HOLE          0x57        // monty_mole_hole_seg5_dl_05000840
 
 // group 7
 #define MODEL_SPINDRIFT                   0x54        // spindrift_geo
