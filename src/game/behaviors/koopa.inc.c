@@ -213,7 +213,7 @@ static void koopa_shelled_act_run_from_mario(void) {
             o->oAction = KOOPA_SHELLED_ACT_STOPPED;
         }
     } else {
-        cur_obj_rotate_yaw_toward(o->oAngleToMario + 0x8000, 0x400);
+        cur_obj_rotate_yaw_toward(o->oAngleToMario /*+ 0x8000,*/,0x400);
         obj_forward_vel_approach(17.0f, 1.0f);
     }
 }

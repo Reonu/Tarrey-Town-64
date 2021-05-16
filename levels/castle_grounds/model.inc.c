@@ -12550,9 +12550,9 @@ Gfx castle_grounds_dl_ZOOb_004_mesh_layer_1[] = {
 	gsSPVertex(castle_grounds_dl_ZOOb_004_mesh_layer_1_vtx_cull + 0, 8, 0),
 	gsSPSetGeometryMode(G_LIGHTING),
 	gsSPCullDisplayList(0, 7),
-	gsSPDisplayList(mat_castle_grounds_dl_Terrain_layer1),
+	gsSPDisplayList(mat_castle_grounds_dl_TerrainWarp_layer1),
 	gsSPDisplayList(castle_grounds_dl_ZOOb_004_mesh_layer_1_tri_0),
-	gsSPDisplayList(mat_revert_castle_grounds_dl_Terrain_layer1),
+	gsSPDisplayList(mat_revert_castle_grounds_dl_TerrainWarp_layer1),
 	gsSPEndDisplayList(),
 };
 

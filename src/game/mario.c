@@ -1748,6 +1748,9 @@ s32 execute_mario_action(UNUSED struct Object *o) {
     if (gMarioState->capTimer > 350) {
         gMarioState->capTimer = 349;
     }
+    if ((gMarioState->action & ACT_FLAG_SWIMMING) && (gMarioState->pos[1] < -1400)) {
+        gMarioState->pos[1] = -1380;
+    }
     if (gMarioState->noclip == 0) {
         if (gMarioState->action == ACT_DEBUG_FREE_MOVE) {
             set_mario_action(gMarioState, ACT_IDLE, 0);
