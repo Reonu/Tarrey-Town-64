@@ -28,6 +28,7 @@ const GeoLayout castle_grounds_area_1_geo[] = {
 		GEO_TRANSLATE_NODE_WITH_DL(1, -1328, 180, -1573, castle_grounds_dl_Tent_001_mesh_layer_1),
 		GEO_TRANSLATE_NODE_WITH_DL(1, 1011, 180, 550, castle_grounds_dl_Tent_002_mesh_layer_1),
 		GEO_TRANSLATE_NODE_WITH_DL(1, 3098, 508, 2948, castle_grounds_dl_Tent_003_mesh_layer_1),
+		GEO_TRANSLATE_NODE_WITH_DL(1, -55, 408, -402, castle_grounds_dl_ZOOB_mesh_layer_1),
 		GEO_TRANSLATE_NODE_WITH_DL(1, -55, 408, -402, castle_grounds_dl_ZOOb_mesh_layer_1),
 		GEO_TRANSLATE_NODE_WITH_DL(1, -55, 408, -402, castle_grounds_dl_ZOOb_001_mesh_layer_1),
 		GEO_TRANSLATE_NODE_WITH_DL(1, -656, 1201, -18855, castle_grounds_dl_ZZZBuildings_mesh_layer_1),

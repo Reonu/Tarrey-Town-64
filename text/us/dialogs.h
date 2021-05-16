@@ -54,18 +54,22 @@ Here, have this star\n\
 as a symbol of our\n\
 partnership."))
 
-DEFINE_DIALOG(DIALOG_005, 1, 6, 30, 200, _("\
-You have a proposal?\n\
-You gotta talk to the\n\
-boss then. He's the\n\
-one standing right in\n\
-front of the entrance\n\
-there."))
+DEFINE_DIALOG(DIALOG_005, 1, 5, 30, 200, _("\
+Hey, are you ready to\n\
+join us and have lunch?\n\
+Once you do, some time\n\
+will pass, so make sure\n\
+you're ready!\n\
+\n\
+\n\
+So, are you coming?\n\
+\n\
+//Go!////Wait!"))
 
 DEFINE_DIALOG(DIALOG_006, 1, 6, 30, 200, _("\
-Huff... puff...\n\
-Finally! We're done\n\
-putting up the tents!\n\
+Good morning, Mario!\n\
+Did you sleep well\n\
+in your tent?\n\
 It feels good to finally\n\
 leave that city behind.\n\
 \n\
@@ -97,25 +101,11 @@ DEFINE_DIALOG(DIALOG_007, 1, 2, 30, 200, _("\
 Don't you feel like\n\
 taking a bath?"))
 
-DEFINE_DIALOG(DIALOG_008, 1, 4, 30, 200, _("\
+DEFINE_DIALOG(DIALOG_008, 1, 1, 30, 200, _("\
 I'm exhausted..."))
 
-DEFINE_DIALOG(DIALOG_009, 1, 5, 30, 200, _("\
-Long time, no see! Wow,\n\
-have you gotten fast!\n\
-Have you been training\n\
-on the sly, or is it the\n\
-power of the Stars?\n\
-I've been feeling down\n\
-about losing the last\n\
-race. This is my home\n\
-course--how about a\n\
-rematch?\n\
-The goal is in\n\
-Windswept Valley.\n\
-Ready?\n\
-\n\
-//Go//// Don't Go"))
+DEFINE_DIALOG(DIALOG_009, 1, 1, 30, 200, _("\
+...what is this?"))
 
 DEFINE_DIALOG(DIALOG_010, 1, 4, 30, 200, _("\
 You've stepped on the\n\
@@ -173,153 +163,89 @@ Do you want to Save?\n\
 //You Bet//Not Now"))
 
 DEFINE_DIALOG(DIALOG_015, 1, 4, 30, 200, _("\
-You can punch enemies to\n\
-knock them down. Press [A]\n\
-to jump, [B] to punch.\n\
-Press [A] then [B] to Kick.\n\
-To pick something up,\n\
-press [B], too. To throw\n\
-something you're holding,\n\
-press [B] again."))
+...what is this?"))
 
 DEFINE_DIALOG(DIALOG_016, 1, 3, 30, 200, _("\
-Hop on the shiny shell and\n\
-ride wherever you want to\n\
-go! Shred those enemies!"))
+...what is this?"))
 
-DEFINE_DIALOG(DIALOG_017, 1, 4, 30, 200, _("\
-I'm the Big Bob-omb, lord\n\
-of all blasting matter,\n\
-king of ka-booms the\n\
-world over!\n\
-How dare you scale my\n\
-mountain? By what right\n\
-do you set foot on my\n\
-imperial mountaintop?\n\
-You may have eluded my\n\
-guards, but you'll never\n\
-escape my grasp...\n\
-\n\
-...and you'll never take\n\
-away my Power Star. I\n\
-hereby challenge you,\n\
-Mario!\n\
-If you want the Star I\n\
-hold, you must prove\n\
-yourself in battle.\n\
-\n\
-Can you pick me up from\n\
-the back and hurl me to\n\
-this royal turf? I think\n\
-that you cannot!"))
+DEFINE_DIALOG(DIALOG_017, 1, 2, 30, 200, _("\
+You have a proposal?\n\
+You gotta talk to the\n\
+boss then. He's the\n\
+one standing right in\n\
+front of the entrance\n\
+there."))
 
-DEFINE_DIALOG(DIALOG_018, 1, 4, 30, 200, _("\
-I'm sleeping because...\n\
-...I'm sleepy. I don't\n\
-like being disturbed.\n\
-Please walk quietly."))
+DEFINE_DIALOG(DIALOG_018, 1, 5, 30, 200, _("\
+Missing the city already?\n\
+Sorry mario, we really\n\
+need you to help us out.\n\
+Maybe visit it another\n\
+time?"))
 
 DEFINE_DIALOG(DIALOG_019, 1, 2, 30, 200, _("\
-Shhh! Please walk\n\
-quietly in the hallway!"))
+I'm going to put my\n\
+house here!"))
 
-DEFINE_DIALOG(DIALOG_020, 1, 6, 95, 150, _("\
-Dear Mario:\n\
-Please come to the\n\
-castle. I've baked\n\
-a cake for you.\n\
-Yours truly--\n\
-Princess Toadstool"))
+DEFINE_DIALOG(DIALOG_020, 1, 4, 95, 150, _("\
+Hi Mario! Thanks for\n\
+showing us this place.\n\
+Sorry, can't talk much\n\
+right now."))
 
 DEFINE_DIALOG(DIALOG_021, 1, 5, 95, 200, _("\
-Welcome.\n\
-No one's home!\n\
-Now " SCRAM "\n\
-and don't come back!\n\
-Gwa ha ha!"))
+Hi Mario! Thanks for\n\
+showing us this place.\n\
+Sorry, can't talk much\n\
+right now."))
 
 DEFINE_DIALOG(DIALOG_022, 1, 2, 95, 200, _("\
-You need a key to open\n\
-this door."))
+I can't wait for this\n\
+village to grow!"))
 
 DEFINE_DIALOG(DIALOG_023, 1, 3, 95, 200, _("\
-This key doesn't fit!\n\
-Maybe it's for the\n\
-basement..."))
+This is way better\n\
+than mining, that's\n\
+for sure."))
 
 DEFINE_DIALOG(DIALOG_024, 1, 5, 95, 200, _("\
-You need Star power to\n\
-open this door. Recover a\n\
-Power Star from an enemy\n\
-inside one of the castle's\n\
-paintings."))
+Thanks for getting\n\
+these guys to build\n\
+the houses, Mario!"))
 
-DEFINE_DIALOG(DIALOG_025, 1, 4, 95, 200, _("\
-It takes the power of\n\
-3 Stars to open this\n\
-door. You need [%] more\n\
-Stars."))
+DEFINE_DIALOG(DIALOG_025, 1, 1, 95, 200, _("\
+...can I drink it?"))
 
-DEFINE_DIALOG(DIALOG_026, 1, 4, 95, 200, _("\
-It takes the power of\n\
-8 Stars to open this\n\
-door. You need [%] more\n\
-Stars."))
+DEFINE_DIALOG(DIALOG_026, 1, 3, 95, 200, _("\
+I'm so hungry, I\n\
+could eat an\n\
+Octorok!"))
 
-DEFINE_DIALOG(DIALOG_027, 1, 4, 95, 200, _("\
-It takes the power of\n\
-30 Stars to open this\n\
-door. You need [%] more\n\
-Stars."))
+DEFINE_DIALOG(DIALOG_027, 1, 3, 95, 200, _("\
+We'll be waiting for\n\
+you here, Mario. Good\n\
+luck!"))
 
-DEFINE_DIALOG(DIALOG_028, 1, 4, 95, 200, _("\
-It takes the power of\n\
-50 Stars to open this\n\
-door. You need [%] more\n\
-Stars."))
+DEFINE_DIALOG(DIALOG_028, 1, 6, 95, 200, _("\
+What happened to the\n\
+guys in the city\n\
+is so scary... Are\n\
+you sure you can\n\
+handle that place,\n\
+Mario?"))
 
-DEFINE_DIALOG(DIALOG_029, 1, 5, 95, 200, _("\
-To open the door that\n\
-leads to the 『endless』\n\
-stairs, you need 70\n\
-Stars.\n\
-Bwa ha ha!"))
+DEFINE_DIALOG(DIALOG_029, 1, 3, 95, 200, _("\
+I'd help you, Mario,\n\
+but... I'd only get\n\
+on your way!"))
 
-DEFINE_DIALOG(DIALOG_030, 1, 6, 30, 200, _("\
-Hello! The Lakitu Bros.,\n\
-cutting in with a live\n\
-update on Mario's\n\
-progress. He's about to\n\
-learn a technique for\n\
-sneaking up on enemies.\n\
-The trick is this: He has\n\
-to walk very slowly in\n\
-order to walk quietly.\n\
-\n\
-\n\
-\n\
-And wrapping up filming\n\
-techniques reported on\n\
-earlier, you can take a\n\
-look around using [C]> and\n\
-[C]<. Press [C]| to view the\n\
-action from a distance.\n\
-When you can't move the\n\
-camera any farther, the\n\
-buzzer will sound. This is\n\
-the Lakitu Bros.,\n\
-signing off."))
+DEFINE_DIALOG(DIALOG_030, 1, 1, 30, 200, _("\
+Good luck, Mario!"))
 
 DEFINE_DIALOG(DIALOG_031, 1, 5, 30, 200, _("\
-No way! You beat me...\n\
-again!! And I just spent\n\
-my entire savings on\n\
-these new Koopa\n\
-Mach 1 Sprint shoes!\n\
-Here, I guess I have to\n\
-hand over this Star to\n\
-the winner of the race.\n\
-Congrats, Mario!"))
+I mean, what's the\n\
+worst thing that can\n\
+happen if I drink it...?"))
 
 DEFINE_DIALOG(DIALOG_032, 1, 5, 30, 200, _("\
 If you get the Wing Cap,\n\
@@ -1650,13 +1576,22 @@ pre-set course.\n\
 It disappears\n\
 automatically, too."))
 
-DEFINE_DIALOG(DIALOG_140, 1, 6, 30, 200, _("\
-Elevator Area\n\
-Right: Hazy Maze\n\
-/// Entrance\n\
-Left: Black Hole\n\
-///Elevator 1\n\
-Arrow: You are here"))
+DEFINE_DIALOG(DIALOG_140, 1, 5, 30, 200, _("\
+Mario!! This is bad!\n\
+Some of the partners\n\
+of the guys buidling\n\
+our village were\n\
+in the city...\n\
+Turns out they got\n\
+kidnapped by the\n\
+Koopa Mafia!\n\
+You need to go\n\
+rescue them!\n\
+We'll wait for\n\
+you here, and the\n\
+guys will keep\n\
+building. Good luck,\n\
+Mario!"))
 
 DEFINE_DIALOG(DIALOG_141, 1, 5, 150, 200, _("\
 You've recovered one of\n\

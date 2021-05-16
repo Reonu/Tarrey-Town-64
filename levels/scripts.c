@@ -135,6 +135,7 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_MONTY_MOLE_HOLE_CUSTOM,        monty_mole_hole_custom_geo),
     LOAD_MODEL_FROM_GEO(MODEL_LAVA_PLATFORM,            lava_platform_geo),
     LOAD_MODEL_FROM_GEO(MODEL_TOAD_BUILDER_PICK,        toad_builder_pick_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_JAM,                      jam_geo),
     FREE_LEVEL_POOL(),
     CALL(/*arg*/ 0, /*func*/ lvl_init_from_save_file),
     LOOP_BEGIN(),

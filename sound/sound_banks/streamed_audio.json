@@ -48,6 +48,11 @@
             "release_rate": 10,
             "envelope": "envelope",
             "sound": "28_custom_magnus"
+        },
+        "inst6": {
+            "release_rate": 10,
+            "envelope": "envelope",
+            "sound": "29_custom_scramble"
         }
     },
     "instrument_list": [
@@ -56,6 +61,7 @@
         "inst2",
         "inst3",
         "inst4",
-        "inst5"
+        "inst5",
+        "inst6"
     ]
 }

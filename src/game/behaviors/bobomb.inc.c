@@ -361,7 +361,7 @@ void bobomb_buddy_cannon_dialog(s16 dialogFirstText, s16 dialogSecondText) {
 
 void bobomb_buddy_act_talk(void) {
     if (set_mario_npc_dialog(1) == 2) {
-        //o->activeFlags |= ACTIVE_FLAG_INITIATED_TIME_STOP;
+        o->activeFlags |= ACTIVE_FLAG_INITIATED_TIME_STOP;
 
         switch (o->oBobombBuddyRole) {
             case BOBOMB_BUDDY_ROLE_ADVICE:
@@ -396,7 +396,7 @@ void bobomb_buddy_act_turn_to_talk(void) {
         if ((sp1e == 5) || (sp1e == 16))
             //cur_obj_play_sound_2(SOUND_OBJ_BOBOMB_WALK);
 
-        o->oMoveAngleYaw = approach_s16_symmetric(o->oMoveAngleYaw, o->oAngleToMario, 0x1000);
+        o->oMoveAngleYaw = o->oAngleToMario;
         if ((s16) o->oMoveAngleYaw == (s16) o->oAngleToMario)
             o->oAction = BOBOMB_BUDDY_ACT_TALK;
 

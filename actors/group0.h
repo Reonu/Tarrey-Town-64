@@ -452,4 +452,6 @@ extern const struct Animation *const monty_mole_seg5_anims_05007248[];
 
 #include "toad_builder_pick/geo_header.h"
 
+#include "jam/geo_header.h"
+
 #endif

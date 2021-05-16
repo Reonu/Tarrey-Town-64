@@ -556,4 +556,6 @@ extern const BehaviorScript bhvGreenSpring[];
 extern const BehaviorScript bhvCar[];
 extern const BehaviorScript bhvWarpStalker[];
 extern const BehaviorScript bhvSinkingLavaPlatform[];
+extern const BehaviorScript bhvJam[];
+extern const BehaviorScript bhvToadKoopa[];
 #endif // BEHAVIOR_DATA_H

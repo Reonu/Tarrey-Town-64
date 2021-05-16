@@ -1703,6 +1703,7 @@ static void debug_update_mario_cap(u16 button, s32 flags, u16 capTimer, u16 capM
             gMarioState->capTimer = capTimer;
         }
 
+
         play_cap_music(capMusic);
     }
 }
@@ -1744,6 +1745,9 @@ s32 execute_mario_action(UNUSED struct Object *o) {
                 gMarioState->health -= 5;
             }
         }
+    if (gMarioState->capTimer > 350) {
+        gMarioState->capTimer = 349;
+    }
     if (gMarioState->noclip == 0) {
         if (gMarioState->action == ACT_DEBUG_FREE_MOVE) {
             set_mario_action(gMarioState, ACT_IDLE, 0);

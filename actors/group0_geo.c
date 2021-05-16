@@ -44,3 +44,4 @@
 #include "monty_mole_hole_custom/geo.inc.c"
 #include "lava_platform/geo.inc.c"
 #include "toad_builder_pick/geo.inc.c"
+#include "jam/geo.inc.c"

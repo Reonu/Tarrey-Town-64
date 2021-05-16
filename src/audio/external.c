@@ -76,17 +76,17 @@ s32 sGameLoopTicked = 0;
 // You're no slouch, but I'm a better sledder! Better luck next time!"), spoken
 // by Koopa instead of the penguin in JP.
 
-#define UKIKI 0
-#define TUXIE 1
-#define BOWS1 2 // Bowser Intro / Doors Laugh
-#define KOOPA 3
-#define KBOMB 4
-#define BOO 5
-#define BOMB 6
-#define BOWS2 7 // Bowser Battle Laugh
-#define GRUNT 8
-#define WIGLR 9
-#define YOSHI 10
+#define UKIKI 0xFF
+#define TUXIE 0xFF
+#define BOWS1 0xFF // Bowser Intro / Doors Laugh
+#define KOOPA 0xFF
+#define KBOMB 0xFF
+#define BOO 0xFF
+#define BOMB 0xFF
+#define BOWS2 0xFF // Bowser Battle Laugh
+#define GRUNT 0xFF
+#define WIGLR 0xFF
+#define YOSHI 0xFF
 #define _ 0xFF
 
 #ifdef VERSION_JP
@@ -312,6 +312,7 @@ u8 sBackgroundMusicDefaultVolume[] = {
     70,  // SEQ_EVENT_CUTSCENE_ENDING
     65,  // SEQ_MENU_FILE_SELECT
     0,   // SEQ_EVENT_CUTSCENE_LAKITU (not in JP)
+    127,
     127,
     127,
     127,
@@ -2658,24 +2659,24 @@ void play_power_star_jingle(u8 arg0) {
  * Called from threads: thread5_game_loop
  */
 void play_race_fanfare(void) {
-    seq_player_play_sequence(SEQ_PLAYER_ENV, SEQ_EVENT_RACE, 0);
+    /*seq_player_play_sequence(SEQ_PLAYER_ENV, SEQ_EVENT_RACE, 0);
     sBackgroundMusicMaxTargetVolume = TARGET_VOLUME_IS_PRESENT_FLAG | 20;
 #if defined(VERSION_EU) || defined(VERSION_SH)
     D_EU_80300558 = 2;
 #endif
-    begin_background_music_fade(50);
+    begin_background_music_fade(50);*/
 }
 
 /**
  * Called from threads: thread5_game_loop
  */
 void play_toads_jingle(void) {
-    seq_player_play_sequence(SEQ_PLAYER_ENV, SEQ_EVENT_TOAD_MESSAGE, 0);
+    /*seq_player_play_sequence(SEQ_PLAYER_ENV, SEQ_EVENT_TOAD_MESSAGE, 0);
     sBackgroundMusicMaxTargetVolume = TARGET_VOLUME_IS_PRESENT_FLAG | 20;
 #if defined(VERSION_EU) || defined(VERSION_SH)
     D_EU_80300558 = 2;
 #endif
-    begin_background_music_fade(50);
+    begin_background_music_fade(50);*/
 }
 
 /**

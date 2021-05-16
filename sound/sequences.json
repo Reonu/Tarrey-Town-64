@@ -140,5 +140,8 @@
     ],
     "28_custom_magnus": [
         "streamed_audio"
+    ],
+    "29_custom_scramble": [
+        "streamed_audio"
     ]
 }

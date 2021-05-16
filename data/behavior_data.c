@@ -5168,6 +5168,20 @@ const BehaviorScript bhvKoopa[] = {
     END_LOOP(),
 };
 
+const BehaviorScript bhvToadKoopa[] = {
+    BEGIN(OBJ_LIST_PUSHABLE),
+    OR_INT(oFlags, (OBJ_FLAG_COMPUTE_ANGLE_TO_MARIO | OBJ_FLAG_COMPUTE_DIST_TO_MARIO | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
+    DROP_TO_FLOOR(),
+    LOAD_ANIMATIONS(oAnimations, toad2_anims),
+    ANIMATE(0),
+    SET_HOME(),
+    CALL_NATIVE(bhv_koopa_init),
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_koopa_update),
+    END_LOOP(),
+};
+
+
 const BehaviorScript bhvKoopaRaceEndpoint[] = {
     BEGIN(OBJ_LIST_DEFAULT),
     OR_INT(oFlags, (OBJ_FLAG_COMPUTE_DIST_TO_MARIO | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
@@ -6297,5 +6311,13 @@ const BehaviorScript bhvSinkingLavaPlatform[] = {
     BEGIN_LOOP(),
         CALL_NATIVE(bhv_bitfs_sinking_platform_loop),
         CALL_NATIVE(load_object_collision_model),
+    END_LOOP(),
+};
+
+const BehaviorScript bhvJam[] = {
+    BEGIN(OBJ_LIST_LEVEL),
+    OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_jam_loop),
     END_LOOP(),
 };

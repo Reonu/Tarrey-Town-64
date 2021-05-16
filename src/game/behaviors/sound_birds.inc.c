@@ -12,6 +12,7 @@ void bhv_birds_sound_init(void) {
         case 0x02:  
             stop_background_music(sCurrentBackgroundMusicSeqId);
             play_music(SEQ_PLAYER_LEVEL, SEQUENCE_ARGS(4, SEQ_STREAMED_RESURRECTION_CHASE), 30);
+            break;
     }
 }
 
@@ -50,6 +51,13 @@ void bhv_birds_sound_loop(void) {
             set_directional_light(dir, 255, 255, 150);
             set_ambient_light(255/3,255/3,150/3);
             break;
+        case 0x30:
+            if (o->oTimer == 1) {
+                set_mario_action(gMarioState, ACT_READING_AUTOMATIC_DIALOG, 140);
+            }
+            if (o->oTimer > 1) {
+                obj_mark_for_deletion(o);
+            }
     }
 
 }

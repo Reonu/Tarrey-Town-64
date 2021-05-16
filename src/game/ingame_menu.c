@@ -1549,29 +1549,29 @@ void handle_special_dialog_text(s16 dialogID) { // dialog ID tables, in order
 
     for (i = 0; i < (s16) ARRAY_COUNT(dialogBossStart); i++) {
         if (dialogBossStart[i] == dialogID) {
-            seq_player_unlower_volume(SEQ_PLAYER_LEVEL, 60);
-            play_music(SEQ_PLAYER_LEVEL, SEQUENCE_ARGS(4, SEQ_EVENT_BOSS), 0);
+            //seq_player_unlower_volume(SEQ_PLAYER_LEVEL, 60);
+            //play_music(SEQ_PLAYER_LEVEL, SEQUENCE_ARGS(4, SEQ_EVENT_BOSS), 0);
             return;
         }
     }
 
     for (i = 0; i < (s16) ARRAY_COUNT(dialogRaceSound); i++) {
         if (dialogRaceSound[i] == dialogID && gDialogLineNum == 1) {
-            play_race_fanfare();
+            //play_race_fanfare();
             return;
         }
     }
 
     for (i = 0; i < (s16) ARRAY_COUNT(dialogStarSound); i++) {
         if (dialogStarSound[i] == dialogID && gDialogLineNum == 1) {
-            play_sound(SOUND_MENU_STAR_SOUND, gGlobalSoundSource);
+            //play_sound(SOUND_MENU_STAR_SOUND, gGlobalSoundSource);
             return;
         }
     }
 
     for (i = 0; i < (s16) ARRAY_COUNT(dialogBossStop); i++) {
         if (dialogBossStop[i] == dialogID) {
-            seq_player_fade_out(SEQ_PLAYER_LEVEL, 1);
+           // seq_player_fade_out(SEQ_PLAYER_LEVEL, 1);
             return;
         }
     }

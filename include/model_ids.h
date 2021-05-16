@@ -50,7 +50,8 @@
 #define MODEL_MONTY_MOLE                  0xE9        // monty_mole_geo
 #define MODEL_FWOOSH                      0xE8        // fwoosh_geo
 #define MODEL_LAVA_PLATFORM               0xE7
-#define MODEL_TOAD_BUILDER_PICK                   0xE6
+#define MODEL_TOAD_BUILDER_PICK           0xE6
+#define MODEL_JAM                         0xE5
 
 
 /* Various static level geometry, the geo layout differs but terrain object presets treat them the same.*/

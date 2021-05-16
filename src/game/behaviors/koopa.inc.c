@@ -74,13 +74,13 @@ void bhv_koopa_init(void) {
         o->oKoopaMovementType = KOOPA_BP_NORMAL;
         o->oKoopaAgility = 1.6f / 3.0f;
         o->oDrawingDistance = 1500.0f;
-        cur_obj_scale(0.8f);
+        //cur_obj_scale(0.8f);
         o->oGravity = -6.4f / 3.0f;
     } else if (o->oKoopaMovementType >= KOOPA_BP_KOOPA_THE_QUICK_BASE) {
         // Koopa the Quick. Race index is 0 for BoB and 1 for THI
         o->oKoopaTheQuickRaceIndex = o->oKoopaMovementType - KOOPA_BP_KOOPA_THE_QUICK_BASE;
         o->oKoopaAgility = 4.0f;
-        cur_obj_scale(3.0f);
+        //cur_obj_scale(3.0f);
     } else {
         o->oKoopaAgility = 1.0f;
     }
@@ -495,7 +495,7 @@ s32 obj_begin_race(s32 noTimer) {
  * Wait for mario to approach, and then enter the show init text action.
  */
 static void koopa_the_quick_act_wait_before_race(void) {
-    koopa_shelled_act_stopped();
+    //koopa_shelled_act_stopped();
 
     if (o->oKoopaTheQuickInitTextboxCooldown != 0) {
         o->oKoopaTheQuickInitTextboxCooldown -= 1;
@@ -506,7 +506,7 @@ static void koopa_the_quick_act_wait_before_race(void) {
         //  cur_obj_update_dialog_with_cutscene for that glitch)
         o->oAction = KOOPA_THE_QUICK_ACT_SHOW_INIT_TEXT;
         o->oForwardVel = 0.0f;
-        cur_obj_init_animation_with_sound(7);
+        cur_obj_init_animation_with_sound(0);
     }
 }
 
@@ -519,18 +519,9 @@ static void koopa_the_quick_act_show_init_text(void) {
         sKoopaTheQuickProperties[o->oKoopaTheQuickRaceIndex].initText);
 
     if (response == 1) {
-        UNUSED s32 unused;
-
-        gMarioShotFromCannon = FALSE;
-        o->oAction = KOOPA_THE_QUICK_ACT_RACE;
-        o->oForwardVel = 0.0f;
-
-        o->parentObj = cur_obj_nearest_object_with_behavior(bhvKoopaRaceEndpoint);
-        o->oPathedStartWaypoint = o->oPathedPrevWaypoint =
-            segmented_to_virtual(sKoopaTheQuickProperties[o->oKoopaTheQuickRaceIndex].path);
-
-        o->oKoopaTurningAwayFromWall = FALSE;
-        o->oFlags |= OBJ_FLAG_ACTIVE_FROM_AFAR;
+        initiate_warp(LEVEL_CASTLE_GROUNDS,3,0x0A,0);
+        level_set_transition(30,NULL);
+        play_transition(WARP_TRANSITION_FADE_INTO_CIRCLE, 0x10, 0x00, 0x00, 0x00);;
     } else if (response == 2) {
         o->oAction = KOOPA_THE_QUICK_ACT_WAIT_BEFORE_RACE;
         o->oKoopaTheQuickInitTextboxCooldown = 60;

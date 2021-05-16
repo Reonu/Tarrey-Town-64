@@ -560,6 +560,7 @@ void bhv_green_spring_loop(void);
 void bhv_green_spring_init(void);
 void bhv_car_loop(void);
 void bhv_warp_stalker_loop(void);
+void bhv_jam_loop(void);
 s16 approach_yaw(s16 curYaw, s16 target, f32 speed);
 
 
