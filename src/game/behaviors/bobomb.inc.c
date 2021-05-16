@@ -11,7 +11,7 @@ static struct ObjectHitbox sBobombHitbox = {
     /* hurtboxRadius:     */ 0,
     /* hurtboxHeight:     */ 0,
 };
-
+u8 hasSpawnedStar;
 void bhv_bobomb_init(void) {
     o->oGravity = 2.5;
     o->oFriction = 0.8;
@@ -296,7 +296,7 @@ void bobomb_buddy_act_idle(void) {
     //collisionFlags = object_step();
 
     if ((sp1a == 5) || (sp1a == 16))
-        cur_obj_play_sound_2(SOUND_OBJ_BOBOMB_WALK);
+        //cur_obj_play_sound_2(SOUND_OBJ_BOBOMB_WALK);
 
     if (o->oDistanceToMario < 1000.0f) {
         if (((o->oBehParams >> 24) & 0xFF) == 0x00) {
@@ -361,7 +361,7 @@ void bobomb_buddy_cannon_dialog(s16 dialogFirstText, s16 dialogSecondText) {
 
 void bobomb_buddy_act_talk(void) {
     if (set_mario_npc_dialog(1) == 2) {
-        o->activeFlags |= ACTIVE_FLAG_INITIATED_TIME_STOP;
+        //o->activeFlags |= ACTIVE_FLAG_INITIATED_TIME_STOP;
 
         switch (o->oBobombBuddyRole) {
             case BOBOMB_BUDDY_ROLE_ADVICE:
@@ -369,9 +369,13 @@ void bobomb_buddy_act_talk(void) {
                     != BOBOMB_BUDDY_BP_STYPE_GENERIC) {
                     set_mario_npc_dialog(0);
 
-                    o->activeFlags &= ~ACTIVE_FLAG_INITIATED_TIME_STOP;
+                    //o->activeFlags &= ~ACTIVE_FLAG_INITIATED_TIME_STOP;
                     o->oBobombBuddyHasTalkedToMario = BOBOMB_BUDDY_HAS_TALKED;
                     o->oInteractStatus = 0;
+                    if ((((o->oBehParams >> 16) & 0xFF) == 0x04) && (!hasSpawnedStar)) {
+                        spawn_default_star(o->oPosX, o->oPosY + 200, o->oPosZ);
+                        hasSpawnedStar = 1;
+                    }
                     o->oAction = BOBOMB_BUDDY_ACT_IDLE;
                 }
                 break;

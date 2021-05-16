@@ -67,3 +67,4 @@
 #include "monty_mole_hole_custom/model.inc.c"
 #include "lava_platform/model.inc.c"
 #include "lava_platform/collision.inc.c"
+#include "toad_builder_pick/model.inc.c"

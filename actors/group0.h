@@ -450,4 +450,6 @@ extern const struct Animation *const monty_mole_seg5_anims_05007248[];
 
 #include "lava_platform/collision_header.h"
 
+#include "toad_builder_pick/geo_header.h"
+
 #endif
