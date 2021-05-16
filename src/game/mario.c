@@ -1278,9 +1278,9 @@ void update_mario_button_inputs(struct MarioState *m) {
         m->input |= INPUT_A_DOWN;
     }
 
-    if (m->controller->buttonPressed & L_TRIG) {
+    /*if (m->controller->buttonPressed & L_TRIG) {
         gCustomDebugMode ^= 1;
-    }
+    }*/
 
     // Don't update for these buttons if squished.
     if (m->squishTimer == 0) {
@@ -1421,13 +1421,13 @@ void update_mario_inputs(struct MarioState *m) {
         & (INT_STATUS_HOOT_GRABBED_BY_MARIO | INT_STATUS_MARIO_UNK1 | INT_STATUS_HIT_BY_SHOCKWAVE)) {
         m->input |= INPUT_UNKNOWN_10;
     }
-    if (m->controller->buttonPressed & L_JPAD) {
+    /*if (m->controller->buttonPressed & L_JPAD) {
         if (m->noclip) {
             m->noclip = 0;
         } else {
             m->noclip = 1;
         }
-    }
+    }*/
 
     // This function is located near other unused trampoline functions,
     // perhaps logically grouped here with the timers.

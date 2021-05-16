@@ -143,5 +143,11 @@
     ],
     "29_custom_scramble": [
         "streamed_audio"
+    ],
+    "2A_custom_tarrey_town_2": [
+        "streamed_audio"
+    ],
+    "2B_custom_urgency": [
+        "streamed_audio"
     ]
 }

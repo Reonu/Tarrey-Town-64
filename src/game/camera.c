@@ -938,7 +938,7 @@ s32 update_8_directions_camera(struct Camera *c, Vec3f focus, Vec3f pos) {
             case 0x09:
                 pitch = DEGREES(-35);
                 baseDist = (3000.0f + ((gMarioState->pos[1] - -6415)/2));
-                print_text_fmt_int(10, 160, "%d", baseDist);
+                //print_text_fmt_int(10, 160, "%d", baseDist);
                 break;
             default:
                 pitch = look_down_slopes(camYaw);
@@ -5227,22 +5227,22 @@ u8 get_cutscene_from_mario_status(struct Camera *c) {
                 cutscene = CUTSCENE_WATER_DEATH;
                 break;
             case ACT_DEATH_ON_BACK:
-                cutscene = CUTSCENE_DEATH_ON_BACK;
+                //cutscene = CUTSCENE_DEATH_ON_BACK;
                 break;
             case ACT_DEATH_ON_STOMACH:
-                cutscene = CUTSCENE_DEATH_ON_STOMACH;
+                //cutscene = CUTSCENE_DEATH_ON_STOMACH;
                 break;
             case ACT_STANDING_DEATH:
-                cutscene = CUTSCENE_STANDING_DEATH;
+                //cutscene = CUTSCENE_STANDING_DEATH;
                 break;
             case ACT_SUFFOCATION:
-                cutscene = CUTSCENE_SUFFOCATION_DEATH;
+                //cutscene = CUTSCENE_SUFFOCATION_DEATH;
                 break;
             case ACT_QUICKSAND_DEATH:
-                cutscene = CUTSCENE_QUICKSAND_DEATH;
+                //cutscene = CUTSCENE_QUICKSAND_DEATH;
                 break;
             case ACT_ELECTROCUTION:
-                cutscene = CUTSCENE_STANDING_DEATH;
+                //cutscene = CUTSCENE_STANDING_DEATH;
                 break;
             case ACT_STAR_DANCE_EXIT:
                 cutscene = determine_dance_cutscene(c);
@@ -10865,7 +10865,7 @@ u8 sZoomOutAreaMasks[] = {
 	ZOOMOUT_AREA_MASK(1, 0, 0, 0, 1, 0, 0, 0), // SL             | WDW
 	ZOOMOUT_AREA_MASK(1, 0, 0, 0, 1, 1, 0, 0), // JRB            | THI
 	ZOOMOUT_AREA_MASK(0, 0, 0, 0, 1, 0, 0, 0), // TTC            | RR
-	ZOOMOUT_AREA_MASK(1, 1, 1, 0, 1, 0, 0, 0), // CASTLE_GROUNDS | BITDW
+	ZOOMOUT_AREA_MASK(1, 1, 1, 1, 1, 0, 0, 0), // CASTLE_GROUNDS | BITDW
 	ZOOMOUT_AREA_MASK(0, 0, 0, 0, 1, 0, 0, 0), // VCUTM          | BITFS
 	ZOOMOUT_AREA_MASK(0, 0, 0, 0, 1, 0, 0, 0), // SA             | BITS
 	ZOOMOUT_AREA_MASK(1, 0, 0, 0, 0, 0, 0, 0), // LLL            | DDD

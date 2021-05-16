@@ -42,4 +42,23 @@ void bhv_warp_stalker_loop() {
                 }
             }
      }
+     if (gDead) {
+         gMarioState->health = 0x800;
+
+         gMarioState->pos[0] = o->oPosX;
+         gMarioState->pos[1] = o->oPosY;
+         gMarioState->pos[2] = o->oPosZ;
+
+        gMarioState->marioObj->oPosX = gMarioState->pos[0];
+        gMarioState->marioObj->oPosY = gMarioState->pos[1];
+        gMarioState->marioObj->oPosZ = gMarioState->pos[2];
+
+        gMarioObject->header.gfx.pos[0] = gMarioState->pos[0];
+        gMarioObject->header.gfx.pos[1] = gMarioState->pos[1];
+        gMarioObject->header.gfx.pos[2] = gMarioState->pos[2];
+
+        
+        gMarioState->action = ACT_IDLE;
+        gDead = 0;
+     }
 }

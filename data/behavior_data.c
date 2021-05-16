@@ -6296,11 +6296,6 @@ const BehaviorScript bhvCar[] = {
     END_LOOP(),
 };
 
-const BehaviorScript bhvWarpStalker[] = {
-    BEGIN_LOOP(),
-        CALL_NATIVE(bhv_warp_stalker_loop),
-    BREAK(),
-};
 
 const BehaviorScript bhvSinkingLavaPlatform[] = {
     BEGIN(OBJ_LIST_SURFACE),

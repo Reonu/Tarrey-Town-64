@@ -53,6 +53,16 @@
             "release_rate": 10,
             "envelope": "envelope",
             "sound": "29_custom_scramble"
+        },
+        "inst7": {
+            "release_rate": 10,
+            "envelope": "envelope",
+            "sound": "2A_custom_tarrey_town_2"
+        },
+        "inst8": {
+            "release_rate": 10,
+            "envelope": "envelope",
+            "sound": "2B_custom_urgency"
         }
     },
     "instrument_list": [
@@ -62,6 +72,8 @@
         "inst3",
         "inst4",
         "inst5",
-        "inst6"
+        "inst6",
+        "inst7",
+        "inst8"
     ]
 }
