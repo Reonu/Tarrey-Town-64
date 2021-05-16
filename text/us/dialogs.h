@@ -68,6 +68,7 @@ Finally! We're done\n\
 putting up the tents!\n\
 It feels good to finally\n\
 leave that city behind.\n\
+\n\
 We no longer have to\n\
 stand the noises,\n\
 the dirtyness, and\n\
@@ -89,28 +90,15 @@ they'd do a good job.\n\
 Why don't you go talk\n\
 to them? It's in the\n\
 opposite direction to\n\
-the city. Good luck!"))
+the city.\n\
+Good luck!"))
 
-DEFINE_DIALOG(DIALOG_007, 1, 5, 30, 200, _("\
-Hufff...fff...pufff...\n\
-Whoa! You...really...are...\n\
-fast! A human blur!\n\
-Here you go--you've won\n\
-it, fair and square!"))
+DEFINE_DIALOG(DIALOG_007, 1, 2, 30, 200, _("\
+Don't you feel like\n\
+taking a bath?"))
 
 DEFINE_DIALOG(DIALOG_008, 1, 4, 30, 200, _("\
-BEWARE OF CHAIN CHOMP\n\
-Extreme Danger!\n\
-Get close and press [C]^\n\
-for a better look.\n\
-Scary, huh?\n\
-See the Red Coin on top\n\
-of the stake?\n\
-\n\
-When you collect eight of\n\
-them, a Power Star will\n\
-appear in the meadow\n\
-across the bridge."))
+I'm exhausted..."))
 
 DEFINE_DIALOG(DIALOG_009, 1, 5, 30, 200, _("\
 Long time, no see! Wow,\n\

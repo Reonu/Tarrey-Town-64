@@ -2323,7 +2323,7 @@ void set_sound_moving_speed(u8 bank, u8 speed) {
  */
 void play_dialog_sound(u8 dialogID) {
     u8 speaker;
-
+/*
     if (dialogID >= DIALOG_COUNT) {
         dialogID = 0;
     }
@@ -2344,7 +2344,7 @@ void play_dialog_sound(u8 dialogID) {
     if (dialogID == DIALOG_010 || dialogID == DIALOG_011 || dialogID == DIALOG_012) {
         play_puzzle_jingle();
     }
-#endif
+#endif*/
 }
 
 /**
