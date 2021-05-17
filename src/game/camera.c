@@ -5227,22 +5227,22 @@ u8 get_cutscene_from_mario_status(struct Camera *c) {
                 cutscene = CUTSCENE_WATER_DEATH;
                 break;
             case ACT_DEATH_ON_BACK:
-                //cutscene = CUTSCENE_DEATH_ON_BACK;
+                cutscene = CUTSCENE_DEATH_ON_BACK;
                 break;
             case ACT_DEATH_ON_STOMACH:
-                //cutscene = CUTSCENE_DEATH_ON_STOMACH;
+                cutscene = CUTSCENE_DEATH_ON_STOMACH;
                 break;
             case ACT_STANDING_DEATH:
-                //cutscene = CUTSCENE_STANDING_DEATH;
+                cutscene = CUTSCENE_STANDING_DEATH;
                 break;
             case ACT_SUFFOCATION:
-                //cutscene = CUTSCENE_SUFFOCATION_DEATH;
+                cutscene = CUTSCENE_SUFFOCATION_DEATH;
                 break;
             case ACT_QUICKSAND_DEATH:
-                //cutscene = CUTSCENE_QUICKSAND_DEATH;
+                cutscene = CUTSCENE_QUICKSAND_DEATH;
                 break;
             case ACT_ELECTROCUTION:
-                //cutscene = CUTSCENE_STANDING_DEATH;
+                cutscene = CUTSCENE_STANDING_DEATH;
                 break;
             case ACT_STAR_DANCE_EXIT:
                 cutscene = determine_dance_cutscene(c);

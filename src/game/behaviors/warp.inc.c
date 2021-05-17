@@ -42,7 +42,7 @@ void bhv_warp_stalker_loop() {
                 }
             }
      }
-     if (gDead) {
+     /*if (gDead) {
          gMarioState->health = 0x800;
 
          gMarioState->pos[0] = o->oPosX;
@@ -60,5 +60,5 @@ void bhv_warp_stalker_loop() {
         
         gMarioState->action = ACT_IDLE;
         gDead = 0;
-     }
+     }*/
 }
