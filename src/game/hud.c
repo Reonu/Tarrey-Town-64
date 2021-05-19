@@ -301,8 +301,39 @@ void render_hud_power_meter(void) {
 #define HUD_TOP_Y 209
 #define HUD_BOTTOM_Y 20
 #endif
-
-/**
+void render_credits(void) {
+    if (gCreditsTimer > 0 && gCreditsTimer < 120 ) {
+        print_text(10, 220, "HACK BY REONU");
+        print_text(10, 200, "LIGHTING ENGINE BY");
+        print_text(10, 180, "WISEGUY");
+    }
+    if (gCreditsTimer > 120 && gCreditsTimer < 240 ) {
+        print_text(10, 220, "SPECIAL THANKS TO");
+        print_text(10, 200, "WISEGUY");
+        print_text(10, 180, "LIGHTING ENGINE & HELP");
+    }
+    if (gCreditsTimer > 240 && gCreditsTimer < 360 ) {
+        print_text(10, 220, "SPECIAL THANKS TO");
+        print_text(10, 200, "ANONYMOUS_MOOSE & BEEF");
+        print_text(10, 180, "BLENDER HELP");
+    }
+    if (gCreditsTimer > 360 && gCreditsTimer < 480 ) {
+        print_text(10, 220, "SPECIAL THANKS TO");
+        print_text(10, 200, "THECOZIES");
+        print_text(10, 180, "CODE HELP");
+    }
+    if (gCreditsTimer > 480 && gCreditsTimer < 600 ) {
+        print_text(10, 220, "SPECIAL THANKS TO");
+        print_text(10, 200, "PYRO & MRCOMIT");
+        print_text(10, 180, "ADVICE & HELP");
+    }
+    if (gCreditsTimer > 600 && gCreditsTimer < 680 ) {
+        print_text(10, 220, "SPECIAL THANKS TO");
+        print_text(10, 200, "YOSHI MILKMAN");
+        print_text(10, 180, "KOOPA MODEL");
+    }
+}
+/**111
  * Renders the amount of lives Mario has.
  */
 extern u8 renderBolt;

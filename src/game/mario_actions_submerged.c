@@ -16,6 +16,7 @@
 #include "behavior_data.h"
 #include "level_table.h"
 #include "rumble_init.h"
+#include "game_init.h"
 
 #define MIN_SWIM_STRENGTH 160
 #define MIN_SWIM_SPEED 16.0f
@@ -920,8 +921,10 @@ static s32 act_drowning(struct MarioState *m) {
         case 1:
             set_mario_animation(m, MARIO_ANIM_DROWNING_PART2);
             m->marioBodyState->eyeState = MARIO_EYES_DEAD;
-            if (m->marioObj->header.gfx.animInfo.animFrame == 30) {
+            gWarpDelay++;
+            if (gWarpDelay == 200) {
                 level_trigger_warp(m, WARP_OP_DEATH);
+                gWarpDelay = 0;
             }
             break;
     }
@@ -940,8 +943,10 @@ static s32 act_water_death(struct MarioState *m) {
     m->marioBodyState->eyeState = MARIO_EYES_DEAD;
 
     set_mario_animation(m, MARIO_ANIM_WATER_DYING);
-    if (set_mario_animation(m, MARIO_ANIM_WATER_DYING) == 35) {
+    gWarpDelay++;
+    if (gWarpDelay == 200) {
         level_trigger_warp(m, WARP_OP_DEATH);
+        gWarpDelay = 0;
     }
 
     return FALSE;
