@@ -3049,13 +3049,18 @@ void update_camera(struct Camera *c) {
     update_camera_hud_status(c);
     if (c->cutscene == 0) {
         // Only process R_TRIG if 'fixed' is not selected in the menu
-        if (cam_select_alt_mode(0) == CAM_SELECTION_MARIO) {
+        if ((cam_select_alt_mode(0) == CAM_SELECTION_MARIO) && (!gCustomCameraMode)) {
             if (gPlayer1Controller->buttonPressed & R_TRIG) {
                 if (set_cam_angle(0) == CAM_ANGLE_LAKITU) {
                     set_cam_angle(CAM_ANGLE_MARIO);
                 } else {
                     set_cam_angle(CAM_ANGLE_LAKITU);
                 }
+            }
+        }
+        if (gCustomCameraMode) {
+            if (set_cam_angle(0) == CAM_ANGLE_MARIO) {
+                set_cam_angle(CAM_ANGLE_LAKITU);
             }
         }
         play_sound_if_cam_switched_to_lakitu_or_mario();
@@ -8938,7 +8943,7 @@ BAD_RETURN(s32) cutscene_dialog_start(struct Camera *c) {
 
 
     cutscene_soften_music(c);
-    set_time_stop_flags(TIME_STOP_ENABLED | TIME_STOP_DIALOG);
+    //set_time_stop_flags(TIME_STOP_ENABLED | TIME_STOP_DIALOG);
 
 #ifndef VERSION_JP
     if (c->mode == CAMERA_MODE_BOSS_FIGHT) {
@@ -9100,7 +9105,7 @@ BAD_RETURN(s32) cutscene_read_message(struct Camera *c) {
         case 0:
             if (get_dialog_id() != -1) {
                 sCutsceneVars[0].angle[0] += 1;
-                set_time_stop_flags(TIME_STOP_ENABLED | TIME_STOP_DIALOG);
+                //set_time_stop_flags(TIME_STOP_ENABLED | TIME_STOP_DIALOG);
             }
             break;
         // Leave the dialog.

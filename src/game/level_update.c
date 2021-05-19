@@ -1255,6 +1255,21 @@ s32 lvl_init_or_update(s16 initOrUpdate, UNUSED s32 unused) {
 
     return result;
 }
+
+void lvl_set_start_area(void) {
+    switch (gMarioState->numStars) {
+        case 0:
+            gIntendedArea = 1;
+            break;
+        case 1:
+            gIntendedArea = 2;
+            break;
+        case 2:
+            gIntendedArea = 4;
+            break;
+    }
+}
+
 extern u8 s8DirModeBaseYaw;
 extern u8 widescreen;
 void lvl_set_camera_mode(u8 arg0) {

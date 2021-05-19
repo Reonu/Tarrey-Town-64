@@ -9,7 +9,7 @@
 #include "types.h"
 #include "memory.h"
 
-#define GFX_POOL_SIZE 12800
+#define GFX_POOL_SIZE 19200
 
 struct GfxPool {
     Gfx buffer[GFX_POOL_SIZE];
@@ -71,6 +71,7 @@ extern u8 gDemoInputs[];
 
 extern u16 frameBufferIndex;
 extern u32 gGlobalTimer;
+extern u8 gIntendedArea;
 
 void setup_game_memory(void);
 void thread5_game_loop(UNUSED void *arg);

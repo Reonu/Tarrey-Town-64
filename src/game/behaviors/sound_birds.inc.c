@@ -28,10 +28,15 @@ void bhv_birds_sound_loop(void) {
             set_ambient_light(lightLevel/3,lightLevel/3,lightLevel/3);
             break;
         case 0x00:
-            lightLevel = 55;
             if (gIsConsole) {
-                lightLevel += 10;
-            }     
+                if ((gCurrLevelNum == LEVEL_BOB) && (gCurrAreaIndex == 0x02)) {
+                    lightLevel = 110;
+                } else {
+                    lightLevel = 80;
+                }
+            } else {
+                lightLevel = 55;
+            }
             set_directional_light(dir, lightLevel, lightLevel, lightLevel);
             set_ambient_light(lightLevel/3,lightLevel/3,lightLevel/3);
             break;
@@ -58,6 +63,15 @@ void bhv_birds_sound_loop(void) {
             if (o->oTimer > 1) {
                 obj_mark_for_deletion(o);
             }
+            break;
+        case 0x31:
+            if (o->oTimer == 1) {
+                set_mario_action(gMarioState, ACT_READING_AUTOMATIC_DIALOG, 141);
+            }
+            if (o->oTimer > 1) {
+                obj_mark_for_deletion(o);
+            }
+            break;  
     }
 
 }

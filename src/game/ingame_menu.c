@@ -2270,7 +2270,7 @@ void render_pause_my_score_coins(void) {
 #ifdef VERSION_EU
         print_generic_string(get_string_width(gTextCourseArr[gInGameLanguage]) + 51, 157, strCourseNum);
 #else
-        print_generic_string(CRS_NUM_X1, 157, strCourseNum);
+        //print_generic_string(CRS_NUM_X1, 157, strCourseNum);
         if (widescreen == 0) {
             if (COURSE_IS_MAIN_COURSE(gCurrCourseNum)) {
                 print_generic_string(10, 40, textCurrRatio43);
@@ -2674,7 +2674,7 @@ s16 render_pause_courses_and_castle(void) {
             }
 
             if (gMarioStates[0].action & ACT_FLAG_PAUSE_EXIT) {
-                render_pause_course_options(99, 93, &gDialogLineNum, 15);
+                //render_pause_course_options(99, 93, &gDialogLineNum, 15);
             }
 
 #ifdef VERSION_EU

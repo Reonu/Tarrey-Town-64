@@ -605,6 +605,7 @@ void general_star_dance_handler(struct MarioState *m, s32 isInWater) {
                         play_music(SEQ_PLAYER_ENV, SEQUENCE_ARGS(15, SEQ_EVENT_CUTSCENE_COLLECT_STAR), 0);
                     }
                 }
+                save_file_do_save(gCurrSaveFileNum - 1);
                 break;
 
             case 42:

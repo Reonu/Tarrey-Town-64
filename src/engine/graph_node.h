@@ -110,7 +110,7 @@ struct GraphNodePerspective
     /*0x18*/ s32 unused;
     /*0x1C*/ f32 fov;   // horizontal field of view in degrees
     /*0x20*/ s16 near;  // near clipping plane
-    /*0x22*/ s16 far;   // far clipping plane
+    /*0x22*/ u16 far;   // far clipping plane
 };
 
 /** An entry in the master list. It is a linked list of display lists

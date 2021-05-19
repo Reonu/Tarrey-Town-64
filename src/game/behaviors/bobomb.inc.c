@@ -429,9 +429,23 @@ void bhv_bobomb_buddy_loop(void) {
     bobomb_buddy_actions();
     u8 bparam1 = (o->oBehParams >> 24) & 0xFF;
     cur_obj_init_animation(bparam1);
-    
-
-    curr_obj_random_blink(&o->oBobombBuddyBlinkTimer);
-
-    o->oInteractStatus = 0;
+    if (bparam1 == 0x05) {
+        if (o->oTimer < 240) {
+            o->oPosX += 7 * coss(o->oFaceAngleYaw);
+            o->oPosZ += 7 * sins(o->oFaceAngleYaw);
+        } else if (o->oTimer < 480) {
+            if (o->oTimer == 240) {
+                o->oMoveAngleYaw += DEGREES(180);
+                o->oFaceAngleYaw += DEGREES(180);
+                
+            }
+            o->oPosX += 7 * coss(o->oFaceAngleYaw);
+            o->oPosZ += 7 * sins(o->oFaceAngleYaw);           
+        } else {
+            o->oTimer = -1;
+            o->oMoveAngleYaw += DEGREES(180);
+            o->oFaceAngleYaw += DEGREES(180);
+        }
+    }
 }
+    
