@@ -3,3 +3,4 @@
 #include "anim_ToadBuilding.inc.c"
 #include "anim_Armature_005Action.inc.c"
 #include "anim_ToadPickaxe.inc.c"
+#include "anim_ToadWalking.inc.c"

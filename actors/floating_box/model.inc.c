@@ -579,7 +579,7 @@ Gfx mat_floating_box_Box_layer1[] = {
 	gsDPPipeSync(),
 	gsDPSetTile(G_IM_FMT_I, G_IM_SIZ_4b, 8, 0, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 6, 0, G_TX_WRAP | G_TX_NOMIRROR, 7, 0),
 	gsDPSetTileSize(0, 0, 0, 508, 252),
-	gsDPSetEnvColor(109, 79, 37, 255),
+	gsDPSetEnvColor(178, 129, 60, 255),
 	gsSPEndDisplayList(),
 };
 
