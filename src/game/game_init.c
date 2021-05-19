@@ -69,6 +69,8 @@ u8 gIsConsole;
 u8 gDead;
 u8 gCustomCameraMode;
 u8 gCustomDebugMode;
+u8 gWarpDelay;
+u16 gCreditsTimer;
 s32 g2DPosY;
 
 u16 sCurrFBNum = 0;

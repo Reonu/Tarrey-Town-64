@@ -1765,6 +1765,12 @@ s32 execute_mario_action(UNUSED struct Object *o) {
             initiate_warp(LEVEL_CASTLE_GROUNDS, gIntendedArea, 0x0A, 0);
         }
     }
+    if (gCreditsTimer < 680) {
+        if ((gCurrLevelNum == LEVEL_CASTLE_GROUNDS) && (gCurrAreaIndex == 0x01)) {
+            render_credits();
+            gCreditsTimer++;
+        }
+    }
         switch ((gMarioState->floor->force >> 8) & 0xFF)  {
             case 0x06:
             case 0x08:
@@ -1933,6 +1939,10 @@ void init_mario(void) {
 
         capObject->oMoveAngleYaw = 0;
     }
+    if (gMarioState->numStars > 0) {
+        gCreditsTimer = 1000;
+    }
+    gWarpDelay = 0;
 }
 
 void init_mario_from_save_file(void) {

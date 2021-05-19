@@ -46,6 +46,8 @@ extern u8 gDead;
 extern u8 gCustomCameraMode;
 extern u8 gCustomDebugMode;
 extern s32 g2DPosY;
+extern u16 gCreditsTimer;
+extern u8 gWarpDelay;
 #ifdef EEP
 extern s8 gEepromProbe;
 #endif
