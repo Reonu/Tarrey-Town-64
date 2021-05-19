@@ -273,12 +273,22 @@ One brick here,\n\
 another one here...\n\
 Oh, hi Mario!"))
 
-DEFINE_DIALOG(DIALOG_037, 1, 2, 30, 200, _("\
-I win! You lose!\n\
-Ha ha ha ha!\n\
-You're no slouch, but I'm\n\
-a better sledder!\n\
-Better luck next time!"))
+DEFINE_DIALOG(DIALOG_037, 1, 5, 30, 200, _("\
+Welcome to the Tarrey\n\
+Town 64 Demo! This is\n\
+a sightly more polished\n\
+version of my submission\n\
+for the second Mario Jams.\n\
+Join the Mario Jams\n\
+Discord! You can find\n\
+the invite link at\n\
+mariojams.com\n\
+\n\
+In this hack, you will\n\
+notice a lot of lighting\n\
+effects. All of these are\n\
+possible thanks to\n\
+Wiseguy's lighting engine."))
 
 DEFINE_DIALOG(DIALOG_038, 1, 3, 95, 200, _("\
 Reacting to the Star\n\
