@@ -1278,9 +1278,9 @@ void update_mario_button_inputs(struct MarioState *m) {
         m->input |= INPUT_A_DOWN;
     }
 
-    if (m->controller->buttonPressed & L_TRIG) {
+    /*if (m->controller->buttonPressed & L_TRIG) {
         gCustomDebugMode ^= 1;
-    }
+    }*/
 
     // Don't update for these buttons if squished.
     if (m->squishTimer == 0) {

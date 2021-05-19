@@ -276,7 +276,7 @@ Oh, hi Mario!"))
 DEFINE_DIALOG(DIALOG_037, 1, 5, 30, 200, _("\
 Welcome to the Tarrey\n\
 Town 64 Demo! This is\n\
-a sightly more polished\n\
+a slightly more polished\n\
 version of my submission\n\
 for the second Mario Jams.\n\
 Join the Mario Jams\n\

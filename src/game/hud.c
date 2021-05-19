@@ -608,9 +608,9 @@ void block_plugins(void) {
     gDPSetCombineLERP(gDisplayListHead++, 0, 0, 0, ENVIRONMENT, 0, 0, 0, SHADE, 0, 0, 0, ENVIRONMENT, 0, 0, 0, SHADE);
     gDPFillRectangle(gDisplayListHead++, 0, 0, 320, 240);
     gDPPipeSync(gDisplayListHead++);
-    //gDPSetEnvColor(gDisplayListHead++, 0, 0, 0, 1);
+    gDPSetEnvColor(gDisplayListHead++, 0, 0, 0, 1);
     gSPTexture(gDisplayListHead++, 0xFFFF, 0xFFFF, 0, G_TX_RENDERTILE, G_OFF);
-    gDPSetCombineLERP(gDisplayListHead++, 0, 0, 0, TEXEL0, 0, 0, 0, TEXEL0, 0, 0, 0, TEXEL0, 0, 0, 0, SHADE);
+    gDPSetCombineLERP(gDisplayListHead++, 0, 0, 0, TEXEL0, 1, 0, ENVIRONMENT, 0, 0, 0, 0, TEXEL0, 1, 0, ENVIRONMENT, 0);
     // gDPSetCombineLERP(gDisplayListHead++, 0, 0, 0, TEXEL0,   COMBINED, 0, ENVIRONMENT, 0,   0, 0, 0, TEXEL0,   COMBINED, 0, ENVIRONMENT, 0);
     print_blocker_text();
     gDPPipeSync(gDisplayListHead++);
@@ -619,6 +619,7 @@ void block_plugins(void) {
     // Block PJ64 Video, Glide64
     // This combiner/render mode combo doesn't show up in any plugin except Glide64/PJ64 Video
     gDPSetFogColor(gDisplayListHead++, 0, 0, 0, 0);
+    gDPSetEnvColor(gDisplayListHead++, 0, 0, 0, 255);
     gDPSetRenderMode(gDisplayListHead++, CVG_DST_CLAMP | IM_RD | CVG_X_ALPHA | ALPHA_CVG_SEL | FORCE_BL | ZMODE_OPA | TEX_EDGE | AA_EN | GBL_c1(G_BL_0, G_BL_0, G_BL_A_FOG, G_BL_1MA), GBL_c2(G_BL_0, G_BL_0, G_BL_A_FOG, G_BL_1MA));
     gDPSetCombineLERP(gDisplayListHead++, 0, 0, 0, ENVIRONMENT, 0, 0, 0, 0, 0, 0, 0, ENVIRONMENT, 0, 0, 0, ENVIRONMENT);
     gDPFillRectangle(gDisplayListHead++, 0, 0, 320, 240);
